@@ -277,3 +277,6 @@ TSWLatexianTemp*
 
 # Apple file system helper
 .DS_Store
+
+# weird word helper files
+~$*
