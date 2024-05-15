@@ -3,22 +3,27 @@
 \usepackage[german]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\graphicspath{ {./Bilder/} }
+
 \usepackage[bookmarks,bookmarksnumbered]{hyperref}
  
 \begin{document}
  
 \title{Pflichtenheft\\\glqq ClimateSight\grqq}
 \author{Leon Fertig (Matrikel-Nummer)\\Matteo Kosina (Matrikel-Nummer) \\Marius Kurth (Matrikel-Nummer)}
+\date{\today}
 \maketitle
- 
+
 
 \tableofcontents
  
 \chapter{Zielbestimmung}
 \section{Muss-Kriterien}
 \begin{itemize}
+    \item Entwicklung einer Web-Applikation für Desktop-PCs
     \item Start-Seite
-    \item Sprache-Einstellungen
+    \item Sprache-Einstellungen für Deutsch und Englisch
     \item Weltkarte, die die einzelnen Länder interaktiv mit Informationen verknüpft. Bei Klicken oder Hovern über ein Land erscheinen verschiedene Informationen:
     \begin{itemize}
         \item durchschnittliche Jahrestemperatur
@@ -34,6 +39,7 @@
 \begin{itemize}
     \item lokale Nachrichten (mit Fokus auf Klima + Wetter)
     \item Klimafilter (nach Temperatur und/oder Niederschlag)
+    \item verschiedene Kartenansichten: Satellit, geographisch, Heat-Map
 \end{itemize}
 
 \section{Kann-Kriterien}
@@ -44,8 +50,9 @@
 
 \section{Abgrenzungskriterien}
 \begin{itemize}
-    \item Kein Einsatz von KI
-    \item Keine Routenführung
+    \item kein Einsatz von KI
+    \item keine Routenführung
+    \item keine mobile Anwendung (nicht für Smartphone oder Tablets optimiert)
 \end{itemize}
 
 \chapter{Einsatz}
@@ -86,21 +93,28 @@ Daten von:
 Die Web-Applikation garantiert keine Genauigkeit der Daten, da diese von externen Quellen stammen. Sofern man davon ausgehen kann, dass die bereitgestellten Daten korrekt sind, sind die dargestellten (und evtl. umgerechneten Daten) auch korrekt.
 
 \chapter{Benutzeroberfläche}
+Es gibt 3 verschieden Benutzeroberflächen: Die Landing-Page, die Discover-Page und die Analytics-Page. Die Landing-Page gibt einige allgemeine Informationen zum Projekt und beinhaltet einen Button zur Discover-Page; Auf dieser kann der User auf einer Weltkarte nach verschiedenen Ländern filtern, die dann hervorgehoben werden. Klickt der User auf ein bestimmtes Land, wird er zur entsprechenden Analytics-Page dieses Landes weitergeleitet, auf der er verschiedene Informationen und Statistiken zur Wetter- und Klimaentwicklung im jeweiligen Land betrachten kann.
 \begin{figure}[ht]
-  \centering
-  \rule{8cm}{6cm}
-  \caption{Benutzeroberfläche: Startseite}
+    \centering
+    \includegraphics[width=\textwidth]{Uebersicht.jpg}
+    \caption{Benutzeroberfläche: Übersicht}
 \end{figure}
 \begin{figure}[ht]
     \centering
-    \rule{8cm}{6cm}
-    \caption{Benutzeroberfläche: Map}
+    \includegraphics[width=\textwidth]{Landingpage.jpg}
+    \caption{Landing-Page}
 \end{figure}
 \begin{figure}[ht]
     \centering
-    \rule{8cm}{6cm}
-    \caption{Benutzeroberfläche: Länderansicht}
+    \includegraphics[width=\textwidth]{Kartenansicht.jpg}
+    \caption{Discover-Page}
 \end{figure}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{Laenderansicht.jpg}
+    \caption{Analytics-Page}
+\end{figure}
+
 
 % \chapter{Qualitätsziele}
 % Qualiätsziele: Allgemeine Ziele sind meistens Änderbarkeit und Wartbarkeit.
