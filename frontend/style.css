@@ -82,3 +82,30 @@ h2{
     display: inline-block;
     padding-top: 100px;
 }
+@media only screen and (max-width: 600px) {
+    #main-content {
+        width: 80%;
+        display: block;
+    }
+    .globe-container{
+        display: none;
+    }
+    #footer-logo{
+        display: none;
+    }
+    .company-name{
+        display: none;
+    }
+   footer{
+      padding-bottom: 3px;
+       width: 90%;
+       height: 60px;
+       position: fixed;
+   }
+   ul{
+       margin-top: -40px;
+   }
+   h1{
+       text-align: center;
+   }
+}
