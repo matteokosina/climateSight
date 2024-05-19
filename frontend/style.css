@@ -1,0 +1,84 @@
+body{
+    margin:0px;
+    font-family: sans-serif;
+}
+.nav-wrapper{
+    background-color: #212121;
+    height: 60px;
+    width: 100%;
+    box-shadow: 0 0 10px 0 rgba(33, 33, 33, 0.53);
+}
+
+#logo{
+    width: 60px;
+    margin-left: 50px;
+    float: left;
+}
+
+#footer-logo{
+    width: 60px;
+    margin-top: 30px;
+
+}
+.company-name{
+    color: white;
+    display: inline-block;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    font-size: larger;
+}
+
+ul{
+    display: inline-block;
+    float: right;
+    margin-right: 50px;
+}
+li{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+a:hover{
+    color: grey;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    margin-top: 100px;
+    background-color: #212121;
+    color: white;
+    width: 97.5%;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#main-content{
+    width: 40%;
+    height: 100%;
+    float: left;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+h1{
+    text-align: right;
+    font-size: 300%;
+}
+h2{
+    text-align: center;
+}
+.globe-container{
+    display: inline-block;
+    padding-top: 100px;
+}

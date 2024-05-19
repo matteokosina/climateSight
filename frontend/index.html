@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimateSight</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+<nav>
+    <div class="nav-wrapper">
+        <img id="logo" src="assets/logo.png" alt="Logo">
+        <div class="company-name">ClimateSight</div>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">About</a></li>
+            <li><a href="#" onclick="loadContent('de')">🇩🇪</a></li>
+            <li><a href="#" onclick="loadContent('en')">🇬🇧</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="main">
+    <div class="container" id="main-content">
+        <!-- XSLT will be loaded here -->
+    </div>
+    <div class="globe-container">
+        <div id="globe"></div>
+    </div>
+</section>
+
+<footer>
+    <img id="footer-logo" src="assets/logo-bw.png" alt="Logo">
+    <div id="copyright"> © ClimateSight 2024. All Rights Reserved.</div>
+
+</footer>
+
+
+<script>
+    function loadContent(lang) {
+        $.ajax({
+            type: "GET",
+            url: "./content/content.xml",
+            dataType: "xml",
+            success: function(xml) {
+                var xslFile;
+                if (lang === 'en') {
+                    xslFile = "./i18n/translate_en.xsl";
+                } else if (lang === 'de') {
+                    xslFile = "./i18n/translate_de.xsl";
+                }
+                $.ajax({
+                    type: "GET",
+                    url: xslFile,
+                    dataType: "xml",
+                    success: function(xsl) {
+                        var xsltProcessor = new XSLTProcessor();
+                        xsltProcessor.importStylesheet(xsl);
+                        var resultDocument = xsltProcessor.transformToFragment(xml, document);
+                        $('#main-content').empty().append(resultDocument);
+                    }
+                });
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        // Load English content by default
+        loadContent('en');
+    });
+</script>
+
+
+</body>
+</html>

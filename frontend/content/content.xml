@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+    <en>
+        <heading>Welcome to ClimateSight</heading>
+        <subheading>What is it about?</subheading>
+        <content>
+            Welcome to our Climate Change Impact Viewer! Our project aims to raise awareness about the
+            significant impacts of climate change on our planet. Through interactive maps and data visualization,
+            we provide a platform for users to explore and understand the various effects of climate change, from
+            rising sea levels to changing weather patterns. With the help of cutting-edge technologies, we aim to
+            make complex climate data accessible and engaging for everyone. Our mission is to empower individuals
+            and communities to take action against climate change and contribute to building a sustainable future
+            for generations to come. Join us in our journey to explore the impacts of climate change and take
+            meaningful steps towards a greener and more resilient planet!
+        </content>
+    </en>
+    <de>
+        <heading>Willkommen bei ClimateSight</heading>
+        <subheading>Was ist unser Ziel?</subheading>
+        <content>
+            Willkommen bei unserem Climate Change Impact Viewer! Unser Projekt zielt darauf ab, das Bewusstsein für
+            die erheblichen Auswirkungen des Klimawandels auf unseren Planeten zu schärfen. Durch interaktive
+            Karten und Datenvisualisierung bieten wir den Nutzern eine Plattform, um die verschiedenen Auswirkungen
+            des Klimawandels zu erforschen und zu verstehen, vom steigenden Meeresspiegel bis hin zu sich verändernden
+            Wettermustern. Mit Hilfe modernster Technologien wollen wir komplexe Klimadaten für jedermann zugänglich
+            und interessant machen. Unser Ziel ist es, Einzelpersonen und Gemeinschaften zu befähigen, Maßnahmen gegen
+            den Klimawandel zu ergreifen und zum Aufbau einer nachhaltigen Zukunft für kommende Generationen beizutragen.
+            Begleiten Sie uns auf unserer Reise, um die Auswirkungen des Klimawandels zu erforschen und sinnvolle
+            Schritte in Richtung eines grüneren und widerstandsfähigeren Planeten zu unternehmen!
+        </content>
+    </de>
+</translations>
