@@ -6,5 +6,6 @@
         <h1><xsl:value-of select="translations/en/heading"/></h1>
         <h2><xsl:value-of select="translations/en/subheading"/></h2>
         <p><xsl:value-of select="translations/en/content"/></p>
+        <a class="launch"><xsl:value-of select="translations/en/launch"/></a>
     </xsl:template>
 </xsl:stylesheet>

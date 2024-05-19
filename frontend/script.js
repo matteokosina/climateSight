@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('globe').appendChild(renderer.domElement);
 
         // Create globe geometry
-        const geometry = new THREE.SphereGeometry(2, 32, 32);
+        const geometry = new THREE.SphereGeometry(2, 64, 64);
 
         // Create globe texture
         const textureLoader = new THREE.TextureLoader();

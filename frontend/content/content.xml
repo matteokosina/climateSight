@@ -13,6 +13,7 @@
             for generations to come. Join us in our journey to explore the impacts of climate change and take
             meaningful steps towards a greener and more resilient planet!
         </content>
+        <launch>get started</launch>
     </en>
     <de>
         <heading>Willkommen bei ClimateSight</heading>
@@ -22,11 +23,11 @@
             die erheblichen Auswirkungen des Klimawandels auf unseren Planeten zu schärfen. Durch interaktive
             Karten und Datenvisualisierung bieten wir den Nutzern eine Plattform, um die verschiedenen Auswirkungen
             des Klimawandels zu erforschen und zu verstehen, vom steigenden Meeresspiegel bis hin zu sich verändernden
-            Wettermustern. Mit Hilfe modernster Technologien wollen wir komplexe Klimadaten für jedermann zugänglich
-            und interessant machen. Unser Ziel ist es, Einzelpersonen und Gemeinschaften zu befähigen, Maßnahmen gegen
+            Wettermustern. Unser Ziel ist es, Einzelpersonen und Gemeinschaften zu befähigen, Maßnahmen gegen
             den Klimawandel zu ergreifen und zum Aufbau einer nachhaltigen Zukunft für kommende Generationen beizutragen.
             Begleiten Sie uns auf unserer Reise, um die Auswirkungen des Klimawandels zu erforschen und sinnvolle
             Schritte in Richtung eines grüneren und widerstandsfähigeren Planeten zu unternehmen!
         </content>
+        <launch>los gehts</launch>
     </de>
 </translations>
