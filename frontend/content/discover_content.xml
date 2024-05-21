@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+    <en>
+        <heading>Discover...</heading>
+        <subheading>Click on a country</subheading>
+        <content>
+           Filter:
+        </content>
+    </en>
+    <de>
+        <heading>Erkunden Sie...</heading>
+        <subheading>Hierzu auf ein Land klicken</subheading>
+        <content>
+           Filter:
+        </content>
+    </de>
+</translations>
