@@ -281,3 +281,6 @@ TSWLatexianTemp*
 
 # weird word helper files
 ~$*
+
+# VSCode stuff
+.vscode
