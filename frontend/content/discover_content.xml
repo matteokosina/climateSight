@@ -4,14 +4,22 @@
         <heading>Discover...</heading>
         <subheading>Click on a country</subheading>
         <content>
-           Filter:
+            <Divider> </Divider>
+           <Info>Filter:</Info>
+            <Filter0>Mock Filter</Filter0>
+            <Filter1>Mock Filter</Filter1>
+            <Filter2>Mock Filter</Filter2>
         </content>
     </en>
     <de>
         <heading>Erkunden Sie...</heading>
         <subheading>Hierzu auf ein Land klicken</subheading>
         <content>
-           Filter:
+            <Divider> </Divider>
+            <Info>Filter:</Info>
+            <Filter0>Beispiel Filter</Filter0>
+            <Filter1>Beispiel Filter</Filter1>
+            <Filter2>Beispiel Filter</Filter2>
         </content>
     </de>
 </translations>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/analytics.css">
+  <link rel="stylesheet" href="../styles/style.css">
+  <title>Land Information</title>
+</head>
+<body>
+<nav>
+  <div class="nav-wrapper">
+    <img id="logo" src="../assets/logo.png" alt="Logo">
+    <div class="company-name">ClimateSight</div>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="#">About</a></li>
+      <li><a href="#" onclick="loadContent('de')">🇩🇪</a></li>
+      <li><a href="#" onclick="loadContent('en')">🇬🇧</a></li>
+    </ul>
+  </div>
+</nav>
+<h1 id="countryNameHeader"></h1>
+<script>
+  // Funktion zum Extrahieren von URL-Parametern
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  // Lese den Ländernamen aus den URL-Parametern
+  const countryName = getQueryParam('country');
+
+  // Zeige den Ländernamen auf der Seite an
+  if (countryName) {
+    document.getElementById('countryNameHeader').textContent = ` ${countryName}`;
+  } else {
+    document.getElementById('countryNameHeader').textContent = 'Kein Land ausgewählt!';
+  }
+</script>
+
+<div id="country-info"></div>
+<script>
+  // Function to extract parameter value from URL
+  function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  }
+
+  // Function to fetch country data and display information
+  async function displayCountryInfo() {
+    const countryName = getParameterByName('country');
+    if (!countryName) {
+      document.getElementById('country-info').textContent = 'Land nicht gefunden.';
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
+      if (!response.ok) {
+        throw new Error('Fehler beim Abrufen der Daten.');
+      }
+
+      const countryData = await response.json();
+      if (countryData.length === 0) {
+        throw new Error('Informationen für dieses Land nicht verfügbar.');
+      }
+
+      const country = countryData[0];
+      const countryInfo = document.getElementById('country-info');
+      countryInfo.innerHTML = `
+
+                    <img id="flagge" src="${country.flags.png}" alt="Flagge">
+                    <div class="infos">
+                     <p>Hauptstadt: ${country.capital}</p>
+                    <p>Region: ${country.region}</p>
+                    <p>Unterregion: ${country.subregion}</p>
+                    <p>Bevölkerung: ${country.population}</p>
+                    <p>Währung: ${Object.values(country.currencies)[0].name} (${Object.values(country.currencies)[0].symbol})</p>
+                    </div>
+
+                `;
+    } catch (error) {
+      console.error('Fehler beim Abrufen der Länderinformationen:', error);
+      document.getElementById('country-info').textContent = 'Fehler beim Abrufen der Länderinformationen.';
+    }
+  }
+
+  // Call the function to display country information on page load
+  displayCountryInfo();
+
+</script>
+<footer>
+  <img id="footer-logo" src="../assets/logo-bw.png" alt="Logo"/>
+  <div id="copyright"> © ClimateSight 2024. All Rights Reserved.</div>
+
+</footer>
+</body>
+</html>

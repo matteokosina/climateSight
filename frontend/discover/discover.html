@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClimateSight</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/discover.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
 </head>
 <body>
 
@@ -22,15 +27,145 @@
     </div>
 </nav>
 
-<section class="main">
-    <div class="container" id="main-content">
+<section class="discover-main">
+    <div class="discover-container" id="discover-main-content">
         <!-- XSLT will be loaded here -->
     </div>
-    <div class="globe-container">
-        <div id="globe"></div>
-    </div>
 </section>
+<section>
+    <div id="map"></div>
+    <div class="control-buttons">
 
+
+
+    </div>
+
+    <script>
+        var southWest = L.latLng(-85, -180);
+        var northEast = L.latLng(85, 180);
+        var bounds = L.latLngBounds(southWest, northEast);
+        // Initialisiere die Karte
+        var map = L.map('map', {
+            center: [51.505, -0.09],
+            zoom: 2,
+            maxBounds: bounds,
+            maxZoom: 18,
+            minZoom: 2,
+            maxBoundsViscosity: 1.0
+        });
+
+        // Füge die OpenStreetMap-Kachel-Ebene hinzu
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Variable, um die geladenen Länder zu speichern
+        var countryLayers = {};
+        var allCountriesLayer;
+
+        // Funktion zum Laden der GeoJSON-Daten für ein Land
+        function loadCountry(countryName, color) {
+            var url = `https://nominatim.openstreetmap.org/search?country=${countryName}&format=geojson&accept-language=en&polygon_geojson=1`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.features && data.features.length > 0) {
+                        var countryLayer = L.geoJSON(data.features[0].geometry, {
+                            style: {
+                                color: color
+                            }
+                        }).addTo(map);
+
+                        // Klick-Event hinzufügen, um zur neuen Seite zu navigieren
+                        countryLayer.on('click', function () {
+                            window.location.href = `../analytics/analytics.html?country=${encodeURIComponent(countryName)}`;
+                        });
+
+                        // Das Land zur Liste der geladenen Länder hinzufügen
+                        countryLayers[countryName] = countryLayer;
+                        map.fitBounds(countryLayer.getBounds());
+                    } else {
+                        alert("Land nicht gefunden!");
+                    }
+                })
+                .catch(err => {
+                    console.error("Fehler beim Laden der GeoJSON-Daten:", err);
+                });
+        }
+
+        // Funktion zum Einfärben der Länder
+        function colorCountry(color, countryName) {
+            if (countryName) {
+                if (countryLayers[countryName]) {
+                    // Wenn das Land bereits geladen wurde, ändere die Farbe
+                    countryLayers[countryName].setStyle({ color: color });
+                } else {
+                    // Wenn das Land noch nicht geladen wurde, lade es
+                    loadCountry(countryName, color);
+                }
+            } else {
+                alert("Bitte geben Sie einen Ländernamen ein!");
+            }
+        }
+
+        // Funktion zum Laden der GeoJSON-Daten für alle Länder
+        fetch('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json')
+            .then(response => response.json())
+            .then(data => {
+                allCountriesLayer = L.geoJSON(data, {
+                    style: {
+                        color: 'transparent',
+                        weight: 1
+                    },
+                    onEachFeature: function (feature, layer) {
+                        layer.on('click', function () {
+                            var countryName = feature.properties.name;
+                            window.location.href = `../analytics/analytics.html?country=${encodeURIComponent(countryName)}`;
+                        });
+                    }
+                }).addTo(map);
+            })
+            .catch(err => {
+                console.error("Fehler beim Laden der GeoJSON-Daten:", err);
+            });
+        function mockFilter(color){
+            var countries = [
+                "Deutschland",
+                "Frankreich",
+                "Italien",
+                "Spanien",
+                "Schweiz",
+                "Österreich",
+                "Niederlande",
+                "Belgien",
+                "Dänemark",
+                "Polen",
+                "Schweden",
+                "Norwegen",
+                "Portugal",
+                "Griechenland"
+            ];
+
+            var randomCountries = [];
+            var countriesCopy = countries.slice(); // Kopie der Original-Liste
+
+            // Schleife zum Auswählen zufälliger Länder
+            for (var i = 0; i < 5; i++) {
+                var randomIndex = Math.floor(Math.random() * countriesCopy.length);
+                randomCountries.push(countriesCopy[randomIndex]);
+                // Entferne das ausgewählte Land aus der Kopie, um Duplikate zu vermeiden
+                countriesCopy.splice(randomIndex, 1);
+            }
+
+            randomCountries.forEach(country => colorCountry(color, country));
+
+        }
+
+    </script>
+
+
+</section>
 <footer>
     <img id="footer-logo" src="../assets/logo-bw.png" alt="Logo">
     <div id="copyright"> © ClimateSight 2024. All Rights Reserved.</div>
@@ -59,7 +194,7 @@
                         var xsltProcessor = new XSLTProcessor();
                         xsltProcessor.importStylesheet(xsl);
                         var resultDocument = xsltProcessor.transformToFragment(xml, document);
-                        $('#main-content').empty().append(resultDocument);
+                        $('#discover-main-content').empty().append(resultDocument);
                     }
                 });
             }

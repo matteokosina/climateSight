@@ -1,0 +1,15 @@
+h1{
+    float: left;
+}
+#flagge{
+    margin-top: 40px;
+    margin-left: 10px;
+    width: 60px;
+    float: left;
+}
+.infos{
+    float: left;
+    text-align: left;
+    margin-top: 200px;
+    font-size: large;
+}

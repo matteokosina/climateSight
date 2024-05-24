@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Create globe texture
         const textureLoader = new THREE.TextureLoader();
-        const texture = textureLoader.load('./texture.png');
+        const texture = textureLoader.load('./assets/texture.png');
 
         // Create globe material
         const material = new THREE.MeshBasicMaterial({ map: texture });
