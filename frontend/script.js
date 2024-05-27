@@ -1,10 +1,30 @@
-document.addEventListener('DOMContentLoaded', function() {
+if (!cookiesAccepted() && location.pathname != "/frontend/index.html") {
+    location.assign("http://" + location.host + "/frontend/index.html");
+}
 
 
-// Initialize variables
+function cookieClose() {
+    localStorage.setItem("cookieSeen", "shown");
+    $(".cookie-banner").fadeOut();
+    location.reload();
+}
+
+function cookiesAccepted() {
+    return (localStorage.getItem("cookieSeen") == "shown");
+}
+
+
+// Globe animation
+document.addEventListener('DOMContentLoaded', showGlobe);
+function showGlobe() {
+    //check if cookies are accepted
+    if (!cookiesAccepted()) return;
+
+
+    // Initialize variables
     let scene, camera, renderer, globe;
 
-// Function to initialize the scene
+    // Function to initialize the scene
     function init() {
         // Create scene
         scene = new THREE.Scene();
@@ -14,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         camera.position.z = 5;
 
         renderer = new THREE.WebGLRenderer({ alpha: true });
-        renderer.setSize(window.innerWidth*0.5, window.innerHeight*0.5);
+        renderer.setSize(window.innerWidth * 0.5, window.innerHeight * 0.5);
         document.getElementById('globe').appendChild(renderer.domElement);
 
         // Create globe geometry
@@ -35,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         animate();
     }
 
-// Function to animate the globe
+    // Function to animate the globe
     function animate() {
         requestAnimationFrame(animate);
 
@@ -45,7 +65,40 @@ document.addEventListener('DOMContentLoaded', function() {
         renderer.render(scene, camera);
     }
 
-// Initialize the scene
     init();
 
+}
+
+// Load new site (in its correct language)
+function loadContent(lang) {
+
+    $.ajax({
+        type: "GET",
+        url: "./content/index_content.xml",
+        dataType: "xml",
+        success: function (xml) {
+            var xslFile;
+            if (lang === 'en') {
+                xslFile = "./i18n/translate_en.xsl";
+            } else if (lang === 'de') {
+                xslFile = "./i18n/translate_de.xsl";
+            }
+            $.ajax({
+                type: "GET",
+                url: xslFile,
+                dataType: "xml",
+                success: function (xsl) {
+                    var xsltProcessor = new XSLTProcessor();
+                    xsltProcessor.importStylesheet(xsl);
+                    var resultDocument = xsltProcessor.transformToFragment(xml, document);
+                    $('#main-content').empty().append(resultDocument);
+                }
+            });
+        }
+    });
+}
+
+$(document).ready(function () {
+    // Load German content by default
+    loadContent('de');
 });
