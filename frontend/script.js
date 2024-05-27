@@ -1,3 +1,4 @@
+// cookie check
 if (!cookiesAccepted() && location.pathname != "/frontend/index.html") {
     location.assign("http://" + location.host + "/frontend/index.html");
 }
