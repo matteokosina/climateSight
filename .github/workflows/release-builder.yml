@@ -4,9 +4,10 @@ on:
   push:
     branches:
       - main
+
 permissions:
   contents: write
-  
+
 jobs:
   create_release:
     runs-on: ubuntu-latest
@@ -24,6 +25,8 @@ jobs:
       run: |
         if [[ "${{ steps.last_commit.outputs.message }}" == *"major-rel"* ]]; then
           echo "::set-output name=level::major"
+        elif [[ "${{ steps.last_commit.outputs.message }}" == *"minor-rel"* ]]; then
+          echo "::set-output name=level::patch"
         else
           echo "::set-output name=level::minor"
         fi
@@ -36,7 +39,7 @@ jobs:
         else
           echo "::set-output name=version::0.0.0"
         fi
-        
+
     - name: Calculate new version
       id: new_version
       run: |
@@ -56,7 +59,7 @@ jobs:
 
     - name: Commit new version
       run: |
-        git config --global user.name "release-builder"
+        git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add VERSION
         git commit -m "Release version ${{ steps.new_version.outputs.version }}"
