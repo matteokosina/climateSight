@@ -36,7 +36,7 @@ jobs:
         else
           echo "::set-output name=version::0.0.0"
         fi
-
+        
     - name: Calculate new version
       id: new_version
       run: |
@@ -45,8 +45,10 @@ jobs:
         IFS='.' read -r -a version_parts <<< "$current_version"
         if [ "$level" == "major" ]; then
           new_version="$((version_parts[0] + 1)).0.0"
-        else
+        elif [ "$level" == "minor" ]; then
           new_version="${version_parts[0]}.$((version_parts[1] + 1)).0"
+        else
+          new_version="${version_parts[0]}.${version_parts[1]}.$((version_parts[2] + 1))"
         fi
         echo "New version: $new_version"
         echo "$new_version" > VERSION
