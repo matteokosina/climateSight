@@ -5,5 +5,5 @@
 # ClimateSight
 Anwendungsprojekt der Vorlesung Webengineering 2024.
 
-Eine Live-Demo findet sich [hier](https://matteokosina.github.io/climateSight/frontend/) .
+Eine Live-Demo findet sich [hier](https://matteokosina.github.io/climateSight/) .
 
