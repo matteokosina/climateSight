@@ -6,7 +6,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage{pdfpages}
-\usepackage{epigraph} 
+\usepackage{epigraph}
+\usepackage{xcolor}
 
 \onehalfspacing % Zeilenabstand 1,5
 
@@ -24,7 +25,7 @@
 	\vspace{1.5cm}
 	{\huge\bfseries ClimateSight\par}
 	\vspace{2cm}
-	{\Large\itshape Leon Fertig (1142628)\\Matteo Kosina (2912404)\\Marius Kurth (3695338)\par}
+	{\Large\itshape Leon Fertig (1142628)\\Matteo Kosina (2912404)\par}
 	\vfill
 	% \includegraphics[width=pagewidth]{Bilder/Titelbild.jpg}\par\vspace{1cm}
 	\vfill
@@ -39,65 +40,88 @@
 
 \setcounter{page}{1}
 
+\section{Einführung}
+Wir - das Team des Projekts {\bf ClimateSight} - haben im Rahmen der Vorlesung {\it Web-Engineering I} bei Herrn Jürgen Röthig eine Webseite entwickelt und begleitend zu dieser Webseite dieses Projekthandbuch über die Planung und organisatorische Steuerung unseres Projektes erstellt.\
+Alle Planungsdokumente wurde erstellt, \underline{nachdem} ein Projektmitglied die Gruppe verlassen hat, sodass dieser Verlust keine relevanten Auswirkungen auf das Projekt hatte.
+
+\section{Projektvorstellung}
+{\color{red} kurze Projektvorstellung (README)}
 
 \section{Protokolle}
-\begin{itemize}
-	\item Inhalte sind u.a.:
-	\begin{itemize}
-		\item Zeitpunkt, Ort, Dauer, Teilnehmer
-		\item Agenda
-		\item wesentliche Inhalte (Kurzform)
-		\item To-dos mit Zuständigkeiten, „erledigt bis“, Status, …
-		\item Entscheidungen, …
-	\end{itemize}
-	\item Dokumentieren Sie Ihre Treffen und fügen die Protokolle dem Projekthandbuch in einem Kapitel
-	zusammengefasst bei.
-	\item Sie können auch die (weiter hinten geforderte) OPL für Protokollierung nutzen.
-\end{itemize}
+Für die Protokollierung ist eine Vorlage entworfen worden, nach der die Treffen jeweils protokolliert worden sind. Zwei Beispiele finden sich nachfolgend.
+\newline
+\includegraphics[width=\textwidth]{Planungsdokumente/graphics/Protokoll1.pdf}
+\includegraphics[width=\textwidth]{Planungsdokumente/graphics/Protokoll2.pdf}
 
 \section{Projektauftrag}
-Projektauftrag konkretisieren ("Hinweis: Das Projekt sollte ein Team mit mehreren Leuten erfordern, einige Wochen oder
-Monate dauern, Auftraggeber darf nicht identisch mit Projektleiter sein").
-\includepdf[pages=-]{Planungsdokumente/Lastenheft.pdf}
+Der Projektauftrag geht aus den Anforderungen des Auftraggebers Herrn Röthig hervor und gibt wieder, was der Auftraggeber von uns erwartet. Das Projektgesamtziel, die Teilziele und die Rahmenbedingungen und der Projektkontext sind direkt aus den Anforderungen von Herrn Röthig zitiert.
+\includepdf[pages=-]{Planungsdokumente/graphics/Projektauftrag.pdf}
 
 \section{Projektziele}
-Erstellen Sie die Projektziele für Ihr Projekt.
+\subsection*{Muss-Kriterien}
 \begin{itemize}
-\item Formulieren Sie die Ziele als vollständige Sätze aus. Bitte keine Stichworte!
-\item Priorisieren Sie die Ziele nach der von Ihnen gewählten Methodik
+    \item Entwicklung einer Web-Applikation für Desktop-PCs
+    \item Start-Seite
+    \item Sprache-Einstellungen für Deutsch und Englisch
+    \item Weltkarte, die die einzelnen Länder interaktiv mit Informationen verknüpft. Bei Klicken über ein Land erscheinen verschiedene Informationen:
+    \begin{itemize}
+        \item durchschnittliche Jahrestemperatur (inkl. historische Daten)
+        \item Niederschlag pro m$^2$
+        \item UV-Einstrahlung
+        \item historische Wetterdaten
+    \end{itemize}
+    \item ausführliche Installationsanleitung
 \end{itemize}
 
-\section{Projektplanung (Phasen- und Meilensteine)}
+\subsection*{Soll-Kriterien}
+\begin{itemize}
+    \item lokale Nachrichten (mit Fokus auf Klima + Wetter)
+    \item Klimafilter (nach Temperatur und/oder Niederschlag)
+    \item Anzeige von aktueller Temperatur
+\end{itemize}
+
+\subsection*{Kann-Kriterien}
+\begin{itemize}
+    \item verschiedene Kartenansichten: Satellit, geographisch, Heat-Map
+    \item lokale Wetterkarten
+\end{itemize}
+
+\subsection*{Abgrenzungskriterien}
+\begin{itemize}
+    \item kein Einsatz von KI
+    \item keine Routenführung
+    \item keine mobile Anwendung (nicht für Smartphone oder Tablets optimiert)
+\end{itemize}
+
+\section{Phasen- und Meilensteinplan}
+\includegraphics[width=\textwidth]{Planungsdokumente/graphics/Meilensteinplan.pdf}
 
 \section{Projektorganigramm}
+\includegraphics[width=\textwidth]{Planungsdokumente/graphics/Projektorganigramm.pdf}
 
 \section{Offene-Punkte-Liste OPL}
+Offene Punkteliste zum 04.06.2024.
+\newline
+\includegraphics[width=\textwidth]{Planungsdokumente/graphics/Offene_Punkteliste.pdf}
 
-\section{Projektstrukturplan PSP}
+\section{Projektstrukturplan}
+Es wurde eine Gemischter Projektstrukturplan erstellt:
 \begin{itemize}
-	\item Erstellen Sie in Ihrem Team
-	\item Projektstrukturplan (PSP)
-	\item mindestens 6-8 Elemente
-	\item Wenn möglich, sollten neben Arbeitspaketen auch Teilaufgaben oder Teilprojekte enthalten sein
-	\item Erläutern Sie, welchen Gliederungstyp sie verwendet haben und erklären Sie am konkreten Fall warum
-	\item Entwerfen Sie gemeinsam eine Vorlage für Arbeitspaketbeschreibungen
-	\item Die Vorlage muss nicht als Bestandteil des Projekthandbuches hinzugefügt werden.
-	\item Jedes Teammitglied erstellt mindestens eine Arbeitspaketbeschreibung
-	\item Autor jedes Arbeitspaketes ist eindeutig kenntlich zu machen
+	\item {\bf Projektmanagement}: Mischung aus Objektorientierung und Phasenorientierung
+	\item {\bf Frontend}: Objektorientierung (wobei die Überarbeitung von UX + Design eher einem phasenorientierten Ansatz entspricht)
+	\item {\bf Backend}: phasenorientiert
 \end{itemize}
+\includegraphics[width=\textwidth]{Planungsdokumente/graphics/Projektstrukturplan.pdf}
 
 \section{Arbeitspaketbeschreibungen}
-s. PSP-Anforderungen
+\includegraphics[width=\textwidth]{Planungsdokumente/graphics/Arbeitspakete.pdf}
 
-\section{Projektablaufplan, Gantt-Diagramm und Darstellung eines kritischen Pfades}
-\begin{itemize}
-	\item Auf Basis des PSP der vorherigen Aufgabe erstellen Sie
-	\item Einen Ablaufplan
-	\item Ein Gantt-Diagramm
-	\item Welche Anordnungsbeziehungen enthält ihr Planung und erläutern Sie kurz warum
-	\item Wo liegt der kritische Pfad?
-	\item Gäbe es eine alternative Planung? Wenn ja, wie sähe die aus?
-\end{itemize}
+\section{Projektablaufplan}
+{\color{red} brauchen wir das oder ist das im Gantt-Diagramm in ausführlicher Form enthalten?!}
+
+\section{Gantt-Diagramm}
+\includegraphics[width=\textwidth, page=1]{Planungsdokumente/graphics/Gantt_Diagramm.pdf}
+\includegraphics[width=\textwidth, page=2]{Planungsdokumente/graphics/Gantt_Diagramm.pdf}
 
 \section{Projektplanung (Ressourcen, Kosten, Risiko, Stakeholder)}
 Auf Basis der Arbeitspakete eine Ressourcenplanung und eine Kostenplanung erstellen.\\
@@ -115,7 +139,14 @@ Stakeholderanalyse
 	\item Führen Sie beispielhaft einige Stakeholderanalyse durch
 \end{itemize}
 
+\section{Ressourcen- und Kostenplan}
+\includegraphics[width=\textwidth]{Planungsdokumente/graphics/Ressourcenplan.pdf}
 
+\section{Risikoanalyse}
+\includegraphics[width=\textwidth]{Planungsdokumente/graphics/Risikoanalyse.pdf}
+\includegraphics[width=\textwidth]{Planungsdokumente/graphics/Risikomatrix.pdf}
+
+\section{Stakeholderanalyse}
 
 \section{Projektstatusbericht}
 Statusbericht (etwa in der Hälfte des Projektzeitraumes)
