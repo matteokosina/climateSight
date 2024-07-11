@@ -40,7 +40,7 @@ function jsonToXML(data){
     // URL zu einer SVG Grafik der Flagge
     xmlResult += "\n<altFlag>" + data.flags.alt  + "</altFlag>";  
     // alt Text für die Flagge          
-    xmlResult += "\n<population>" +  data.population + "</condition>";
+    xmlResult += "\n<population>" +  data.population + "</population>";
     xmlResult += "\n</facts>\n"
     return xmlResult
 }
