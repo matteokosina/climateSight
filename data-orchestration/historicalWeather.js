@@ -17,14 +17,14 @@
 </historical>
 */
 
-async function getHistoricalWeather(latitude, longitude, startDate, endDate) {
+export async function getHistoricalWeather(latitude, longitude, startDate, endDate) {
     const url = `https://archive-api.open-meteo.com/v1/archive`;
 
     const params = new URLSearchParams({
         latitude: latitude,
         longitude: longitude,
         start_date: startDate,
-        end_date: endDate,
+        end_date: getLastDayOfPreviousYear(),
         timezone: 'UTC',
         daily: 'precipitation_sum,temperature_2m_max,snowfall_sum' // hier die Art der Daten definiert
     });
@@ -43,6 +43,18 @@ async function getHistoricalWeather(latitude, longitude, startDate, endDate) {
         return { error: 'Unable to fetch historical weather data' };
     }
     
+}
+
+function getLastDayOfPreviousYear() {
+    const today = new Date();
+    const previousYear = today.getFullYear() - 1;
+    const lastDayOfPreviousYear = new Date(previousYear, 11, 31); // Month is 0-indexed (11 is December)
+    
+    const year = lastDayOfPreviousYear.getFullYear().toString().slice(-2); // Get last 2 digits of year
+    const month = String(lastDayOfPreviousYear.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed, so add 1
+    const day = String(lastDayOfPreviousYear.getDate()).padStart(2, '0');
+    
+    return `${year}-${month}-${day}`;
 }
 
 // Konvertierung der erhaltenen JSON-Daten in XML
@@ -102,4 +114,3 @@ function calculateYearlyAverages(data) {
 }
 
 
-module.exports = {getHistoricalWeather};

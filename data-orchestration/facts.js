@@ -11,7 +11,7 @@
 </facts>
 */
 
-async function getFacts(country) {
+export async function getFacts(country) {
     const url = `https://restcountries.com/v3.1/name/`;
     try {
         const response = await fetch(`${url}${country}`);
@@ -45,4 +45,3 @@ function jsonToXML(data){
     return xmlResult
 }
 
-module.exports = {getFacts};
