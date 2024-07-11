@@ -1,7 +1,7 @@
 const { orchestrator } = require("./orchestrator");
 
 async function test(){
-    let result = await  orchestrator(90.0, 0).then(data => {
+    let result = await  orchestrator(66.0, 66.0).then(data => {
         weatherData = data;
     });
 
