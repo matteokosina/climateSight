@@ -71,6 +71,7 @@ function jsonToXML(data) {
     }
 
     xml += '</historical>';
+   
     return xml;
 }
 
