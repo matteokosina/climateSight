@@ -119,3 +119,26 @@
                 addKMLToMap(result)
                 });
           }
+
+          map.on('click', function(e) {
+            
+            // Reverse Geocoding: Get country name based on coordinates
+            fetch(`https://nominatim.openstreetmap.org/reverse?lat=${e.latlng.lat}&lon=${e.latlng.lng}&format=json&accept-language=en`)
+              .then(response => response.json())
+              .then(data => {
+                redirectToAnalytics(e.latlng.lat, e.latlng.lng, data.address.country);
+              })
+              .catch(error => {
+                console.error('Error fetching country:', error);
+              });
+          });
+
+        async  function redirectToAnalytics(lat, lon, country){
+            
+            
+           
+            // Erzeuge die URL mit den Parametern
+                const url = `../index.html?lat=${lat}&lon=${lon}&country=${country}`;
+                // Führe die Weiterleitung aus
+                window.location.href = url;
+          }

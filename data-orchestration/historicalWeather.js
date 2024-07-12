@@ -17,14 +17,14 @@
 </historical>
 */
 
-export async function getHistoricalWeather(latitude, longitude, startDate, endDate) {
+export async function getHistoricalWeather(latitude, longitude, startDate) {
     const url = `https://archive-api.open-meteo.com/v1/archive`;
 
     const params = new URLSearchParams({
         latitude: latitude,
         longitude: longitude,
         start_date: startDate,
-        end_date: getLastDayOfPreviousYear(),
+        end_date: "20" +getLastDayOfPreviousYear(),
         timezone: 'UTC',
         daily: 'precipitation_sum,temperature_2m_max,snowfall_sum' // hier die Art der Daten definiert
     });
@@ -59,7 +59,10 @@ function getLastDayOfPreviousYear() {
 
 // Konvertierung der erhaltenen JSON-Daten in XML
 function jsonToXML(data) {
-    
+    let year_list = [];
+    let precipition_values = [];
+    let temperature_values = [];
+    let snowfall_values = [];
     let xml = '<historical>\n';
 
     for (let year in data) {
@@ -69,9 +72,54 @@ function jsonToXML(data) {
         xml += `    <snowfall_sum>${data[year].snowfall_sum}</snowfall_sum>\n`;
         xml += '  </year>\n';
     }
-
     xml += '</historical>';
    
+
+    for (let year in data) {
+        
+        snowfall_values.push(data[year].snowfall_sum);
+        year_list.push(year);
+        precipition_values.push(data[year].average_precipitation_sum);
+        temperature_values.push(data[year].average_temperature_2m_max);
+    }
+   
+    //xml += generateChartCoordinates(data);
+    precipition_values =  scaleArray(precipition_values);
+    temperature_values = scaleArray(temperature_values);
+    snowfall_values = scaleArray(snowfall_values);
+
+
+    //        xmlData += '<chart xvalue="Zeit in Jahren" yvalue="keine in °C" color="blue">\n<title>Sample Line Chart</title>\n <values>\n<point tag="2010" x="0" y="00" />\n<point tag="2011" x="100" y="60" />\n<point tag="2012" x="200" y="122" />\n<point tag="2013" x="300" y="30" />\n<point tag="2014" x="400" y="5" />\n</values>\n</chart>';
+
+    xml += '<chart xvalue="Zeit in Jahren" yvalue="Niederschlag in mm/m2" color="blue">\n<title>Sample Line Chart</title>';
+    xml += '\n<values>\n';
+    for (let i = 0; i < precipition_values.length; i++) {
+       
+        xml += '<point tag="' + year_list[i] + '" x="' + (i*35) + '" y="' + precipition_values[i] + '" />\n';
+        
+    }
+    xml += '</values>\n';
+    xml += '</chart>\n';
+
+    xml += '<chart xvalue="Zeit in Jahren" yvalue="Temperatur in °C" color="blue">\n<title>Sample Line Chart</title>';
+    xml += '\n<values>\n';
+    for (let i = 0; i < temperature_values.length; i++) {
+       
+        xml += '<point tag="' + year_list[i] + '" x="' + (i*35) + '" y="' + temperature_values[i] + '" />\n';
+        
+    }
+    xml += '</values>\n';
+    xml += '</chart>\n';
+
+    xml += '<chart xvalue="Zeit in Jahren" yvalue="Schnefall in mm/m2" color="blue">\n<title>Sample Line Chart</title>';
+    xml += '\n<values>\n';
+    for (let i = 0; i < snowfall_values.length; i++) {
+       
+        xml += '<point tag="' + year_list[i] + '" x="' + (i*35) + '" y="' + snowfall_values[i] + '" />\n';
+        
+    }
+    xml += '</values>\n';
+    xml += '</chart>\n';
     return xml;
 }
 
@@ -114,4 +162,33 @@ function calculateYearlyAverages(data) {
     return yearlyAverages;
 }
 
+function scaleArray(data) {
+    if (data.length === 0) {
+      return [];
+    }
+    // Finde den kleinsten Wert im Array
+    const minValue = Math.min(...data);
+    const originalMinValue = minValue; // Speichere den ursprünglichen minimalen Wert
+    
+    // Falls der kleinste Wert negativ ist, verschiebe alle Werte um den absoluten Betrag des kleinsten Wertes
+    if (minValue < 0) {
+      data = data.map(value => value - minValue);
+    }
+    
+    // Finde den neuen maximalen Wert nach der Verschiebung
+    const maxValue = Math.max(...data);
+    
+    // Berechne den Skalierungsfaktor
+    const scaleFactor = 600 / Math.round(maxValue);
+    
+    // Skaliere die Werte
+    data = data.map(value => Math.round(value * scaleFactor));
+    
+    // Falls der ursprüngliche minValue negativ war, subtrahiere den verschobenen Wert mal den Skalierungsfaktor
+    if (originalMinValue < 0) {
+      data = data.map(value => Math.round(value - (originalMinValue * scaleFactor)));
+    }
+    return data;
+  }
+  
 
