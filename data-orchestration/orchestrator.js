@@ -3,6 +3,14 @@ import { getCurrentWeather } from './currentWeather.js';
 import { getFacts } from './facts.js';
 import {  getHistoricalWeather } from './historicalWeather.js';
 
+// cookie check
+if (!cookiesAccepted() && location.pathname != "/index.html") {
+    location.assign("http://" + location.host + "/index.html");
+}
+function cookiesAccepted() {
+    return (localStorage.getItem("cookieSeen") == "shown");
+}
+
 async function generateXMLData(){
     const urlParams = new URLSearchParams(window.location.search);
     const lat = urlParams.get('lat');

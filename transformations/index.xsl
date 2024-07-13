@@ -18,11 +18,27 @@
                         <li><a href="{navbar/link/@ref}"><xsl:value-of select="navbar/link"/></a></li>
                     </ul>
                     </div>
-                </nav>          
-                <div id="map-info">
-                    <xsl:value-of select="text"/>
+                </nav>
+                <h1><xsl:value-of select="heading"/></h1>
+                <div class="content">
+                <div class="info">
+                <h2><xsl:value-of select="subheading"/></h2>
+                <p><xsl:value-of select="content"/></p>
+                <a class="launch" href="./map/discover.html"><xsl:value-of select="launch"/></a>
                 </div>
-                <a href="#" id="showZones"><xsl:value-of select="launch"/></a>
+                <div id="globe"></div>
+                </div>
+
+                <div class="cookie-banner" id="cookie" style="display: none">
+                    <h2><xsl:value-of select="cookies/title"/></h2>
+                    <img src="{cookies/icon/@src}" alt="{cookies/icon/@alt}"/>
+                    <p>
+                    <xsl:value-of select="cookies/text"/>
+                    <a id="cookie-info"  href="{cookies/link/@ref}"><xsl:value-of select="cookies/link"/></a>
+                    </p>
+                    <a id ="close" href="#"><xsl:value-of select="cookies/accept"/></a>
+                </div>
+
                 <footer>
                     <a href="{footer/logo/@ref}">
                         <img id="footer-logo" src="{footer/logo/@src}" alt="{footer/logo/@alt}" />

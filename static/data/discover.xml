@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+    <de>
+        <navbar>
+            <logo src= "../static/assets/logo.png" alt="ClimateSight" name="ClimateSight" ref="#"/>
+            <link ref="#">About</link>
+        </navbar>
+        <heading>Willkommen bei ClimateSight</heading>
+        <subheading>Was ist unser Ziel?</subheading>
+        <text>
+          
+        </text>
+        <launch>Zonen einzeichnen</launch>
+       
+        <footer>
+            <logo src= "../static/assets/logo-bw.png" alt="ClimateSight" name="ClimateSight" ref="#"/>
+            <copyright>© ClimateSight 2024. All Rights Reserved. | <imprint ref="#"> Imprint</imprint></copyright>
+        </footer>
+    </de>
+</translations>
