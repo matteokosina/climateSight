@@ -138,7 +138,7 @@
             
            
             // Erzeuge die URL mit den Parametern
-                const url = `../index.html?lat=${lat}&lon=${lon}&country=${country}`;
+                const url = `../analytics/analytics.html?lat=${lat}&lon=${lon}&country=${country}`;
                 // Führe die Weiterleitung aus
                 window.location.href = url;
           }
