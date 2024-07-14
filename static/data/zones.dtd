@@ -1,0 +1,12 @@
+<!DOCTYPE geodata
+[
+<!ELEMENT geodata (zone+)>
+<!ELEMENT zone (coordinates+)>
+<!ATTLIST zone
+    name CDATA #REQUIRED>
+<!ELEMENT coordinates EMPTY>
+<!ATTLIST coordinates
+    latitude CDATA #REQUIRED
+    longitude CDATA #REQUIRED>
+
+]>

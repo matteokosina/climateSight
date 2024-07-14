@@ -2,7 +2,6 @@
 <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     
-    <xsl:output method="html" indent="yes" />
     
     <xsl:template match="/translations/de">                
                 <nav>
@@ -16,8 +15,8 @@
                     </ul>
                     </div>
                 </nav>
-                <h1><xsl:value-of select="heading"/></h1>
                 <div id="print"><a href="#" ><xsl:value-of select="print"/></a></div>
+                 <div id="data"></div>  
                 <footer>
                     <a href="{footer/logo/@ref}">
                         <img id="footer-logo" src="{footer/logo/@src}" alt="{footer/logo/@alt}" />

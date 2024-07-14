@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
-    <title>ClimateSight</title>
+    <title>Analytics</title>
     <link rel="shortcut icon" href="../static/assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
+
 <body>
-    <div id="main-content"></div>
-    <div id="output"></div>  
+    <!-- Generieung der Daten -->
     <script type="module" src="../data-orchestration/orchestrator.js"></script>
+    <!-- Generierung von Footer und Navbar -->
     <script src="./script.js"></script>
 
-     <!-- Das Skript zum Drucken -->
-    
+    <div id="main-content">
+        <!-- XSLT will be loaded here -->
+    </div>
+
+
 </body>
+
 </html>

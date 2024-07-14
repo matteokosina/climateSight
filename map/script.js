@@ -1,25 +1,28 @@
+let zonesDrawn = false;
+let map;
+// XML mithilfe von XSL transformieren um Discover Seite zu erhalten
+transformXML();
 
-// cookie check
+// Ueberpruefung, ob Cookies bereits akzeptiert wurden, wenn nicht, wird man auf die Startseite zurueck gefuehrt
 if (!cookiesAccepted() && location.pathname != "/index.html") {
-    console.log(location.host);
     location.assign("http://" + location.host + "/climateSight/index.html");
 }
+
+// auslesen des localstorage
 function cookiesAccepted() {
     return (localStorage.getItem("cookieSeen") == "shown");
 }
 
-let zonesDrawn = false;
-
-let map;
-// Initialize Leaflet map
+// Initialisierung der Leaflet-Karte
 function initMap(){
+        map = L.map('map').setView([0, 0], 2); // Initiales Zoom-Level
         
-        map = L.map('map').setView([0, 0], 2); // Initial center and zoom level
+        // Begrenzungen fuer den Zoom
         var maxBounds = L.latLngBounds(
             L.latLng(-90, -180),   // Südwestlicher Eckpunkt der Begrenzung
             L.latLng(90, 180)      // Nordöstlicher Eckpunkt der Begrenzung
         );
-        // Add OpenStreetMap tile layer to the map
+        //  OpenStreetMap tile layer zur Karte hinzufuegen
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             center: [51.505, -0.09],
             zoom: 1,
@@ -29,26 +32,27 @@ function initMap(){
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
         map.setMaxBounds(maxBounds);
+
+        // Klick-Event wenn man auf die Karte klickt
         map.on('click', function (e) {
         
-            // Reverse Geocoding: Get country name based on coordinates
+            // Reverse Geocoding: diese API liefert das Land zu den uebergebenen Koordinaten zurueck
             fetch(`https://nominatim.openstreetmap.org/reverse?lat=${e.latlng.lat}&lon=${e.latlng.lng}&format=json&accept-language=en`)
                 .then(response => response.json())
                 .then(data => {
+                    // Weiterleitung zur Analytics-Seite und Codierung der Koordinaten
                     redirectToAnalytics(e.latlng.lat, e.latlng.lng, data.address.country);
                 })
                 .catch(error => {
                     console.error('Error fetching country:', error);
                 });
         });
+        // Copyright einblenden
         map.attributionControl.setPosition('topright');
 
 }
 
-
-
-
-// Function to add KML layer to the map
+// hier werden die Daten aus der KML zur Karte hinzugefuegt
 function addKMLToMap(kmlData) {
     if (zonesDrawn) {
         return;
@@ -58,8 +62,6 @@ function addKMLToMap(kmlData) {
 
     for (let i = 0; i < xmlDoc.getElementsByTagName('kml:coordinates').length; i++) {
         var coordinates = [];
-
-
         var coords = xmlDoc.getElementsByTagName('kml:coordinates')[i].textContent.trim().split(' ');
 
         coords.forEach(function (coord) {
@@ -79,7 +81,6 @@ function addKMLToMap(kmlData) {
             }).addTo(map);
 
 
-            // Fit map view to the bounds of the polygon
             map.fitBounds(polygon.getBounds());
         } else {
             console.error('Invalid or empty coordinates in KML file.');
@@ -88,6 +89,7 @@ function addKMLToMap(kmlData) {
     zonesDrawn = true;
 }
 
+// Einfaerbungsfarbe der Klima-Zonen
 function getColor(index) {
     switch (index) {
         case 0:
@@ -105,6 +107,7 @@ function getColor(index) {
     }
 }
 
+// laden der noetigen Dateien (als Text)
 async function fetchFile(url) {
     const response = await fetch(url);
     if (!response.ok) {
@@ -113,7 +116,7 @@ async function fetchFile(url) {
     return await response.text();
 }
 
-function transformXML(xsltText, xmlText) {
+function transformXMLtoKML(xsltText, xmlText) {
     const parser = new DOMParser();
     const xsltDoc = parser.parseFromString(xsltText, "application/xml");
     const xmlDoc = parser.parseFromString(xmlText, "application/xml");
@@ -133,21 +136,23 @@ async function getTransformedResult(xsltUrl, xmlUrl) {
             fetchFile(xmlUrl)
         ]);
 
-        const result = transformXML(xsltText, xmlText);
+        const result = transformXMLtoKML(xsltText, xmlText);
         return result;
     } catch (error) {
         console.error(`Error during transformation: ${error}`);
         return null;
     }
 }
+
+// ActionListener wird erzeugt um auf ein Klick-Event zu hoeren, wenn gedrueckt werden die Zonen eingezeichnet
 function setupActionListener() {
     const link = document.getElementById("showZones");
     if (link) {
         link.addEventListener("click", handleLinkClick);
     }
-
-
 }
+
+// KML aus XML transformieren und der Karte hinzufuegen
 function handleLinkClick(event) {
     getTransformedResult('../transformations/kml.xsl', '../static/data/zones.xml').then(result => {
         addKMLToMap(result);
@@ -156,14 +161,14 @@ function handleLinkClick(event) {
 }
 
 
-
 async function redirectToAnalytics(lat, lon, country) {
-
     // Erzeuge die URL mit den Parametern
     const url = `../analytics/analytics.html?lat=${lat}&lon=${lon}&country=${country}`;
     // Führe die Weiterleitung aus
     window.location.href = url;
 }
+
+// laden der noetigen Dateien (als Dokument)
 async function loadFile(url) {
     const response = await fetch(url);
     if (!response.ok) {
@@ -172,17 +177,19 @@ async function loadFile(url) {
     const text = await response.text();
     return new DOMParser().parseFromString(text, "application/xml");
 }
-async function transformXML2() {
+
+// transformieren der Seiteninhalte und anschließendes hinzufuegen zum main-content div
+async function transformXML() {
     try {
         const xmlDoc = await loadFile('../static/data/discover.xml');
         const xslDoc = await loadFile('../transformations/discover.xsl');
 
         const outputElement = document.getElementById("main-content");
 
-        if (window.ActiveXObject || "ActiveXObject" in window) { // IE
+        if (window.ActiveXObject || "ActiveXObject" in window) { 
             const ex = xmlDoc.transformNode(xslDoc);
             outputElement.innerHTML = ex;
-        } else if (document.implementation && document.implementation.createDocument) { // Modern browsers
+        } else if (document.implementation && document.implementation.createDocument) { 
             const xsltProcessor = new XSLTProcessor();
             xsltProcessor.importStylesheet(xslDoc);
             const resultDocument = xsltProcessor.transformToFragment(xmlDoc, document);
@@ -191,8 +198,10 @@ async function transformXML2() {
                 throw new Error("Transformation did not return a DocumentFragment");
             }
 
-            outputElement.innerHTML = '';  // Clear previous content
+            outputElement.innerHTML = '';  
             outputElement.appendChild(resultDocument);
+
+            // wenn das Dokument vollstaendig transformiert ist:
             setupActionListener()
             initMap()
         } else {
@@ -202,7 +211,7 @@ async function transformXML2() {
         console.error("Error during XML transformation:", error);
     }
 }
-transformXML2();
+
 
 
 

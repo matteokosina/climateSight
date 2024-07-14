@@ -1,0 +1,29 @@
+<!DOCTYPE translations
+[
+<!ELEMENT translations (de)>
+<!ELEMENT de (navbar, heading, subheading, content, footer)>
+
+<!ELEMENT navbar (logo, link)>
+<!ELEMENT logo EMPTY>
+<!ATTLIST logo
+    src CDATA #REQUIRED
+    alt CDATA #REQUIRED
+    name CDATA #REQUIRED
+    ref CDATA #REQUIRED
+>
+<!ELEMENT link (#PCDATA)>
+<!ATTLIST link
+    ref CDATA #REQUIRED
+>
+
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT subheading (#PCDATA)>
+<!ELEMENT content (#PCDATA)>
+
+<!ELEMENT footer (logo, copyright)>
+<!ELEMENT copyright (#PCDATA | imprint)*>
+<!ELEMENT imprint (#PCDATA)>
+<!ATTLIST imprint
+    ref CDATA #REQUIRED
+>
+]>

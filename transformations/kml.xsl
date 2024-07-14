@@ -3,7 +3,6 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:kml="http://www.opengis.net/kml/2.2">
 
-  <xsl:output method="xml" indent="yes"/>
   <xsl:strip-space elements="*"/>
 
   <xsl:template match="/">

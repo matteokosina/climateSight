@@ -1,74 +1,75 @@
-// Import functions from other modules
+/* Hier werden die Daten der unterschiedlichen APIs zusammengetragen und in ein wohkgeformtes XML Dokument ueberfuehrt. Dieses XML Dokument wird dann
+mithilfe von XSL transformiert und angezeigt.
+*/  
+
+// Importieren der Datenlieferanten
 import { getCurrentWeather } from './currentWeather.js';
 import { getFacts } from './facts.js';
 import {  getHistoricalWeather } from './historicalWeather.js';
 
-// cookie check
+// Ueberpruefung, ob Cookies bereits akzeptiert wurden, wenn nicht, wird man auf die Startseite zurueck gefuehrt
 if (!cookiesAccepted() && location.pathname != "/index.html") {
     location.assign("http://" + location.host + "/index.html");
 }
+// auslesen des localstorage
 function cookiesAccepted() {
     return (localStorage.getItem("cookieSeen") == "shown");
 }
 
+// sobald das Dokument geladen ist wird mit der XML-Transformation begonnen
+document.addEventListener("DOMContentLoaded", transformXML);
+
+// Zusammenfuehrung der XML-Daten
 async function generateXMLData(){
+
+    // hier wird ausgelesen auf welches Land ( und Koordinaten ) der / Nutzer:in geklickt hat
     const urlParams = new URLSearchParams(window.location.search);
     const lat = urlParams.get('lat');
     const lon = urlParams.get('lon');
     const country = urlParams.get('country');
 
 
-    
+    // Erstellung des XML-Dokuments mit Angabe der DTD
     let xmlData = '<?xml version="1.0" encoding="UTF-8"?>\n';
-        xmlData += '<!DOCTYPE weather SYSTEM "climatesight.dtd">\n';
-        xmlData += '<data>\n';
-    
-        xmlData += await getFacts(country.toLocaleLowerCase());
-        xmlData += await getCurrentWeather(lat, lon);
-        xmlData += await getHistoricalWeather(lat, lon, '2010-01-01');
-
-
-        /*
-        // mock data for charts:
-        xmlData += '<chart xvalue="Zeit in Jahren" yvalue="Temperatur in °C" color="#4287f5">\n<title>Sample Line Chart</title>\n <values>\n<point tag="2019" x="0" y="00" />\n<point tag="2020" x="100" y="60" />\n<point tag="2021" x="200" y="122" />\n<point tag="2022" x="300" y="30" />\n<point tag="2023" x="400" y="-15" />\n</values>\n</chart>';
-        xmlData += '<chart xvalue="Zeit in Jahren" yvalue="keine in °C" color="blue">\n<title>Sample Line Chart</title>\n <values>\n<point tag="2010" x="0" y="0" />\n<point tag="2011" x="100" y="60" />\n<point tag="2012" x="200" y="122" />\n<point tag="2013" x="300" y="30" />\n<point tag="2014" x="400" y="5" />\n</values>\n</chart>';
-        xmlData += '<chart xvalue="Zeit in Jahren" yvalue="keine in °C" color="blue">\n<title>Sample Line Chart</title>\n <values>\n<point tag="2010" x="0" y="00" />\n<point tag="2011" x="100" y="60" />\n<point tag="2012" x="200" y="122" />\n<point tag="2013" x="300" y="30" />\n<point tag="2014" x="400" y="5" />\n</values>\n</chart>';
-        xmlData += '<chart xvalue="Zeit in Jahren" yvalue="keine in °C" color="blue">\n<title>Sample Line Chart</title>\n <values>\n<point tag="2010" x="0" y="229" />\n<point tag="2011" x="100" y="60" />\n<point tag="2012" x="200" y="122" />\n<point tag="2013" x="300" y="30" />\n<point tag="2014" x="400" y="5" />\n</values>\n</chart>';
-        */
-        
-        // Ende des XML Dokumentes
+        xmlData += '<!DOCTYPE climatesight SYSTEM "climatesight.dtd">\n';
+            xmlData += '<data>\n';
+            xmlData += await getFacts(country.toLocaleLowerCase());
+            xmlData += await getCurrentWeather(lat, lon);
+            xmlData += await getHistoricalWeather(lat, lon, '2010-01-01');
         xmlData += '\n</data>';
         
         return xmlData;
 }
 
+// parsen des XML-Strings zu einem Dokument
 async function loadXMLStringAsDocument(xmlString) {
     let xml = await xmlString;
-    console.log(xml)
     return new DOMParser().parseFromString(xml, "application/xml");
 }
 
-async function loadXSLTFile(url) {
+// laden von benoetigten Dateien
+async function loadFile(url) {
     const response = await fetch(url);
     if (!response.ok) {
-        throw new Error(`Failed to load XSLT file: ${response.status} ${response.statusText}`);
+        throw new Error(`Failed to load file: ${response.status} ${response.statusText}`);
     }
     const text = await response.text();
     return new DOMParser().parseFromString(text, "application/xml");
 }
 
+// hier wird das erzeugte XML mithilfe von XSL transformiert und das Resultat in data div eingefuegt
 async function transformXML() {
     try {
         const xmlString = generateXMLData();
         const xmlDoc = await loadXMLStringAsDocument(xmlString);
-        const xslDoc = await loadXSLTFile('../transformations/analytics-data.xsl');
+        const xslDoc = await loadFile('../transformations/analytics-data.xsl');
 
-        const outputElement = document.getElementById("output");
+        const outputElement = document.getElementById("data");
 
-        if (window.ActiveXObject || "ActiveXObject" in window) { // IE
+        if (window.ActiveXObject || "ActiveXObject" in window) { 
             const ex = xmlDoc.transformNode(xslDoc);
             outputElement.innerHTML = ex;
-        } else if (document.implementation && document.implementation.createDocument) { // Modern browsers
+        } else if (document.implementation && document.implementation.createDocument) { 
             const xsltProcessor = new XSLTProcessor();
             xsltProcessor.importStylesheet(xslDoc);
             const resultDocument = xsltProcessor.transformToFragment(xmlDoc, document);
@@ -87,4 +88,3 @@ async function transformXML() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", transformXML);
