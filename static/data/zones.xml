@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <geodata>
   <zone name="Polarzone">
+    <coordinates latitude="59" longitude="-300"/>
     <coordinates latitude="59.512029" longitude="-140.273438"/>
     <coordinates latitude="59.512029" longitude="-140.273438"/>
     <coordinates latitude="61.585492" longitude="-133.593750"/>
@@ -80,9 +81,9 @@
     <coordinates latitude="63.054959" longitude="220.429688"/>
     <coordinates latitude="63.054959" longitude="220.429688"/>
     <coordinates latitude="90.0" longitude="180.0"/>
-    <coordinates latitude="90.0" longitude="-180.0"/>
+    <coordinates latitude="90.0" longitude="-300.0"/>
   </zone>
-  <!-- <zone name="Temperierte Zone">
+  <zone name="Temperierte Zone">
 <coordinates latitude="23.845650" longitude="220.078125"/>
 <coordinates latitude="23.845650" longitude="220.078125"/>
 <coordinates latitude="23.845650" longitude="211.992188"/>
@@ -154,6 +155,8 @@
 <coordinates latitude="31.334871" longitude="-141.328125"/>
 <coordinates latitude="32.824211" longitude="-156.445313"/>
 <coordinates latitude="32.824211" longitude="-156.445313"/>
+    <coordinates latitude="32" longitude="-300"/>
+    <coordinates latitude="59" longitude="-300"/>
 <coordinates latitude="59.512029" longitude="-140.273438"/>
 <coordinates latitude="59.512029" longitude="-140.273438"/>
 <coordinates latitude="61.585492" longitude="-133.593750"/>
@@ -232,8 +235,9 @@
 <coordinates latitude="62.410729" longitude="202.500000"/>
 <coordinates latitude="63.054959" longitude="220.429688"/>
 <coordinates latitude="63.054959" longitude="220.429688"/>
-</zone> -->
-  <!-- <zone name="Tropische Zone">
+</zone>
+  <zone name="Tropische Zone">
+    <coordinates latitude="-21" longitude="-300"/>
 <coordinates latitude="-21.657428" longitude="-102.656250"/>
 <coordinates latitude="-21.657428" longitude="-102.656250"/>
 <coordinates latitude="-20.673905" longitude="-90.000000"/>
@@ -362,8 +366,10 @@
 <coordinates latitude="31.334871" longitude="-141.328125"/>
 <coordinates latitude="32.824211" longitude="-156.445313"/>
 <coordinates latitude="32.824211" longitude="-156.445313"/>
-</zone> -->
-  <!-- <zone name="Temperierte Zone süd">
+    <coordinates latitude="32" longitude="-300"/>
+</zone>
+  <zone name="Temperierte Zone süd">
+    <coordinates latitude="-71" longitude="-300"/>
     <coordinates latitude="-71.088305" longitude="-151.171875"/>
     <coordinates latitude="-71.088305" longitude="-151.171875"/>
     <coordinates latitude="-68.672544" longitude="-126.562500"/>
@@ -451,8 +457,9 @@
   <coordinates latitude="-20.673905" longitude="-90"/>
   <coordinates latitude="-21.657428" longitude="-102.65625"/>
   <coordinates latitude="-21.657428" longitude="-102.65625"/>
-  </zone> -->
-  <!-- <zone name="Polarzone süd">
+    <coordinates latitude="-21" longitude="-300"/>
+  </zone>
+  <zone name="Polarzone süd">
     <coordinates latitude="-61.122019" longitude="223.242188"/>
     <coordinates latitude="-61.122019" longitude="223.242188"/>
     <coordinates latitude="-63.253412" longitude="193.710938"/>
@@ -483,7 +490,8 @@
     <coordinates latitude="-68.672544" longitude="-126.5625"/>
     <coordinates latitude="-71.088305" longitude="-151.171875"/>
     <coordinates latitude="-71.088305" longitude="-151.171875"/>
-    <coordinates latitude="-90.0" longitude="-180.0"/>
+    <coordinates latitude="-71" longitude="-300"/>
+    <coordinates latitude="-90.0" longitude="-300.0"/>
     <coordinates latitude="-90.0" longitude="180.0"/>
-  </zone> -->
+  </zone>
 </geodata>
