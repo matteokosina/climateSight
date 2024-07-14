@@ -150,7 +150,8 @@ function setupActionListener() {
 }
 function handleLinkClick(event) {
     getTransformedResult('../transformations/kml.xsl', '../static/data/zones.xml').then(result => {
-        addKMLToMap(result)
+        addKMLToMap(result);
+        map.setView([0, 0], 2);
     });
 }
 

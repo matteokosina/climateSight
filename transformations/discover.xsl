@@ -21,7 +21,6 @@
                 
                 <div id="info">
                     <h1> <xsl:value-of select="heading"/></h1>
-                    <h2> <xsl:value-of select="subheading"/></h2>
                     <xsl:value-of select="text"/>
                 </div>
                 <div id="showZones"><a href="#" ><xsl:value-of select="launch"/></a></div>
