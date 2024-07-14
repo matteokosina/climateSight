@@ -34,7 +34,7 @@
         <h2>ClimateSight Analytics</h2>
         <table>
             <tr>
-                <th>Capital</th>
+                <th>Hauptstadt</th>
                 <td><xsl:value-of select="capital"/></td>
             </tr>
             <tr>
@@ -153,9 +153,9 @@
         <table>
             <tr>
                 <th>Jahr</th>
-                <th>Durchschnittlicher Niederschlag (mm/m2)</th>
+                <th>Durchschnittlicher Niederschlag pro m²</th>
                 <th>Durchschnittlichs Temperatur</th>
-                <th>Durchschnittliche Schneefall (mm/m2)</th>
+                <th>Durchschnittliche Schneefall pro m²</th>
             </tr>
             <xsl:apply-templates select="year"/>
         </table>
