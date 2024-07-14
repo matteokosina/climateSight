@@ -91,7 +91,7 @@ function jsonToXML(data) {
 
     //        xmlData += '<chart xvalue="Zeit in Jahren" yvalue="keine in °C" color="blue">\n<title>Sample Line Chart</title>\n <values>\n<point tag="2010" x="0" y="00" />\n<point tag="2011" x="100" y="60" />\n<point tag="2012" x="200" y="122" />\n<point tag="2013" x="300" y="30" />\n<point tag="2014" x="400" y="5" />\n</values>\n</chart>';
 
-    xml += '<chart xvalue="Zeit in Jahren" yvalue="Niederschlag in mm/m2" color="blue">\n<title>Sample Line Chart</title>';
+    xml += '<chart xvalue="Zeit in Jahren" yvalue="Niederschlag pro m²" color="blue">\n<title>Sample Line Chart</title>';
     xml += '\n<values>\n';
     for (let i = 0; i < precipition_values.length; i++) {
        
@@ -111,7 +111,7 @@ function jsonToXML(data) {
     xml += '</values>\n';
     xml += '</chart>\n';
 
-    xml += '<chart xvalue="Zeit in Jahren" yvalue="Schnefall in mm/m2" color="blue">\n<title>Sample Line Chart</title>';
+    xml += '<chart xvalue="Zeit in Jahren" yvalue="Schnefall pro m²" color="blue">\n<title>Sample Line Chart</title>';
     xml += '\n<values>\n';
     for (let i = 0; i < snowfall_values.length; i++) {
        
