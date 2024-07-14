@@ -5,8 +5,7 @@
     <xsl:output method="html" indent="yes" />
     
     <xsl:template match="/translations/de">
-                <link rel="stylesheet" type="text/css" href="./styles/style.css"/>
-                
+                <link rel="stylesheet" type="text/css" href="../styles/style.css"/>
 
                 <nav>
                     <div class="nav-wrapper">
@@ -18,11 +17,15 @@
                         <li><a href="{navbar/link/@ref}"><xsl:value-of select="navbar/link"/></a></li>
                     </ul>
                     </div>
-                </nav>          
-                <div id="map-info">
+                </nav>   
+                
+                <div id="info">
+                    <h1> <xsl:value-of select="heading"/></h1>
+                    <h2> <xsl:value-of select="subheading"/></h2>
                     <xsl:value-of select="text"/>
                 </div>
-                <a href="#" id="showZones"><xsl:value-of select="launch"/></a>
+                <div id="showZones"><a href="#" ><xsl:value-of select="launch"/></a></div>
+                <div id="map" style="height: 90%; width:75%; position:absolute; z-index:0;"></div>
                 <footer>
                     <a href="{footer/logo/@ref}">
                         <img id="footer-logo" src="{footer/logo/@src}" alt="{footer/logo/@alt}" />

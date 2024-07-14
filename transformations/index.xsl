@@ -21,7 +21,7 @@
                 </nav>
                 <h1><xsl:value-of select="heading"/></h1>
                 <div class="content">
-                <div class="info">
+                <div class="main-info">
                 <h2><xsl:value-of select="subheading"/></h2>
                 <p><xsl:value-of select="content"/></p>
                 <a class="launch" href="./map/discover.html"><xsl:value-of select="launch"/></a>

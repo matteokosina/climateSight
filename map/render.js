@@ -7,28 +7,46 @@ function cookiesAccepted() {
     return (localStorage.getItem("cookieSeen") == "shown");
 }
 
-
+let map;
 // Initialize Leaflet map
-var map = L.map('map').setView([0, 0], 2); // Initial center and zoom level
-var maxBounds = L.latLngBounds(
-    L.latLng(-90, -180),   // Südwestlicher Eckpunkt der Begrenzung
-    L.latLng(90, 180)      // Nordöstlicher Eckpunkt der Begrenzung
-);
-// Add OpenStreetMap tile layer to the map
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    center: [51.505, -0.09],
-    zoom: 1,
-    maxZoom: 40,
-    minZoom: 3,
-    maxBoundsViscosity: 1.0,
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-map.setMaxBounds(maxBounds);
+function initMap(){
+        
+        map = L.map('map').setView([0, 0], 2); // Initial center and zoom level
+        var maxBounds = L.latLngBounds(
+            L.latLng(-90, -180),   // Südwestlicher Eckpunkt der Begrenzung
+            L.latLng(90, 180)      // Nordöstlicher Eckpunkt der Begrenzung
+        );
+        // Add OpenStreetMap tile layer to the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            center: [51.505, -0.09],
+            zoom: 1,
+            maxZoom: 40,
+            minZoom: 3,
+            maxBoundsViscosity: 1.0,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        map.setMaxBounds(maxBounds);
+        map.on('click', function (e) {
+        
+            // Reverse Geocoding: Get country name based on coordinates
+            fetch(`https://nominatim.openstreetmap.org/reverse?lat=${e.latlng.lat}&lon=${e.latlng.lng}&format=json&accept-language=en`)
+                .then(response => response.json())
+                .then(data => {
+                    redirectToAnalytics(e.latlng.lat, e.latlng.lng, data.address.country);
+                })
+                .catch(error => {
+                    console.error('Error fetching country:', error);
+                });
+        });
+        map.attributionControl.setPosition('topright');
+
+}
+
+
 
 
 // Function to add KML layer to the map
 function addKMLToMap(kmlData) {
-    console.log(kmlData)
     var parser = new DOMParser();
     var xmlDoc = parser.parseFromString(kmlData, "text/xml");
 
@@ -117,12 +135,13 @@ async function getTransformedResult(xsltUrl, xmlUrl) {
         return null;
     }
 }
-function setupActionListener(){
-        const link = document.getElementById("showZones");
-        if (link) {
-            link.addEventListener("click", handleLinkClick);
-        }
-    
+function setupActionListener() {
+    const link = document.getElementById("showZones");
+    if (link) {
+        link.addEventListener("click", handleLinkClick);
+    }
+
+
 }
 function handleLinkClick(event) {
     getTransformedResult('../transformations/kml.xsl', '../static/data/zones.xml').then(result => {
@@ -130,18 +149,7 @@ function handleLinkClick(event) {
     });
 }
 
-map.on('click', function (e) {
 
-    // Reverse Geocoding: Get country name based on coordinates
-    fetch(`https://nominatim.openstreetmap.org/reverse?lat=${e.latlng.lat}&lon=${e.latlng.lng}&format=json&accept-language=en`)
-        .then(response => response.json())
-        .then(data => {
-            redirectToAnalytics(e.latlng.lat, e.latlng.lng, data.address.country);
-        })
-        .catch(error => {
-            console.error('Error fetching country:', error);
-        });
-});
 
 async function redirectToAnalytics(lat, lon, country) {
 
@@ -180,6 +188,7 @@ async function transformXML2() {
             outputElement.innerHTML = '';  // Clear previous content
             outputElement.appendChild(resultDocument);
             setupActionListener()
+            initMap()
         } else {
             throw new Error("Your browser does not support XSLT transformations");
         }

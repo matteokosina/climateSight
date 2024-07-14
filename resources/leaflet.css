@@ -63,11 +63,13 @@
 .leaflet-container img.leaflet-tile {
 	/* See: https://bugs.chromium.org/p/chromium/issues/detail?id=600120 */
 	mix-blend-mode: plus-lighter;
+	
 }
 
 .leaflet-container.leaflet-touch-zoom {
 	-ms-touch-action: pan-x pan-y;
 	touch-action: pan-x pan-y;
+	
 	}
 .leaflet-container.leaflet-touch-drag {
 	-ms-touch-action: pinch-zoom;
@@ -81,6 +83,7 @@
 }
 .leaflet-container {
 	-webkit-tap-highlight-color: transparent;
+	
 }
 .leaflet-container a {
 	-webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);
@@ -423,6 +426,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	}
 .leaflet-control-attribution a {
 	text-decoration: none;
+	
 	}
 .leaflet-control-attribution a:hover,
 .leaflet-control-attribution a:focus {
