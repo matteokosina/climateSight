@@ -25,16 +25,17 @@ export async function getFacts(country) {
           }
 
        console.log()
-       return jsonToXML(facts[0]);
+       return jsonToXML(facts[0], country);
     } catch (error) {
         console.error('Failed to fetch facts:', error);
         return { error: 'Unable to fetch facts' };
     }
 }
 // Konvertierung der JSON Daten in XML
-function jsonToXML(data){
+function jsonToXML(data, country){
     let xmlResult = "<facts>";
     // Information ueber Hauptstadt
+    xmlResult += "\n<country>" + data.translations.deu.official  + "</country>";
     xmlResult += "\n<capital>" + data.capital  + "</capital>";
     xmlResult += "\n<flag>" +  data.flags.svg + "</flag>";
     // URL zu einer SVG Grafik der Flagge

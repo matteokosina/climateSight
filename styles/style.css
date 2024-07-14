@@ -271,3 +271,28 @@ img{
 #cookie-info{
     text-decoration: underline;
 }
+#print{
+    width: fit-content;
+    display: block;
+    background-color: rgb(66, 184, 66);
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 10px;
+    margin-left: 20px;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+@media print {
+    /* Diese Elemente sollen beim drucken nicht mit angezeigt werden*/
+    button {
+        display: none;
+    }
+    footer{
+        display: none;
+    }
+    #nav-mobile{
+        display: none;
+    }
+}
