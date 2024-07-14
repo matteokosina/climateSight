@@ -7,6 +7,8 @@ function cookiesAccepted() {
     return (localStorage.getItem("cookieSeen") == "shown");
 }
 
+let zonesDrawn = false;
+
 let map;
 // Initialize Leaflet map
 function initMap(){
@@ -47,6 +49,9 @@ function initMap(){
 
 // Function to add KML layer to the map
 function addKMLToMap(kmlData) {
+    if (zonesDrawn) {
+        return;
+    }
     var parser = new DOMParser();
     var xmlDoc = parser.parseFromString(kmlData, "text/xml");
 
@@ -79,6 +84,7 @@ function addKMLToMap(kmlData) {
             console.error('Invalid or empty coordinates in KML file.');
         }
     }
+    zonesDrawn = true;
 }
 
 function getColor(index) {
