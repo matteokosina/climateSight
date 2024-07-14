@@ -5,24 +5,11 @@
     <xsl:param name="table-width" select="'100%'"/>
 
     <xsl:template match="/">
-        <html>
-            <head>
-                <style>
-                    table {
-                        width: <xsl:value-of select="$table-width"/>;
-                        border-collapse: collapse;
-                    }
-                    th, td {
-                        border: <xsl:value-of select="$table-border"/>px solid black;
-                        padding: 8px;
-                        text-align: left;
-                    }
-                </style>
-            </head>
-            <body>
+        
+        
                 <xsl:apply-templates select="/data/*"/>
-            </body>
-        </html>
+            
+                
     </xsl:template>
 
     <!-- Template for facts -->

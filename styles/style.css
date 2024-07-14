@@ -1,33 +1,36 @@
-html, body {
-    margin:0px;
+html,
+body {
+    margin: 0px;
     font-family: sans-serif;
     height: 100%;
-    
+
     margin: 0;
     padding: 0;
 }
-.nav-wrapper{
+
+.nav-wrapper {
     background-color: #212121;
     height: 60px;
     width: 100%;
     box-shadow: 0 0 10px 0 rgba(33, 33, 33, 0.53);
 }
 
-#logo{
+#logo {
     height: 60px;
     width: auto;
     margin-left: 50px;
     float: left;
 }
 
-#footer-logo{
+#footer-logo {
     display: block;
     width: 40px;
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
 }
-.company-name{
+
+.company-name {
     color: white;
     display: inline-block;
     float: left;
@@ -36,12 +39,13 @@ html, body {
     font-size: larger;
 }
 
-ul{
+ul {
     display: inline-block;
     float: right;
     margin-right: 50px;
 }
-li{
+
+li {
     display: inline-block;
     color: white;
     text-decoration: none;
@@ -50,11 +54,11 @@ li{
     margin-right: 10px;
 }
 
-a:hover{
+a:hover {
     color: grey;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
@@ -72,44 +76,51 @@ footer {
     padding: 25px;
     z-index: 1;
 }
-.main{
+
+.main {
     margin-top: 50px;
     display: inline-flex;
 }
-#globe{
+
+#globe {
     margin-top: 5%;
 }
-#info{
+
+#info {
     font-size: large;
     width: 20%;
     margin-left: 20px;
     margin-top: 1%;
 }
-.content{
+
+.content {
     display: flex;
     flex-wrap: wrap;
 }
-h1{
+
+h1 {
     font-size: 150%;
     font-weight: bolder;
     width: 100%;
     margin-left: 20px;
 }
-h2{
+
+h2 {
     display: block;
     margin-bottom: 20px;
     margin-top: 10px;
     font-size: x-large;
     font-weight: bold;
 }
-#about{
+
+#about {
     width: 60%;
     font-size: larger;
 }
 
-.launch{
+.launch {
     background-color: rgb(66, 184, 66);
-    padding:7px;
+    padding: 7px;
     border-radius: 7px;
     display: block;
     width: fit-content;
@@ -117,7 +128,8 @@ h2{
     margin-right: auto;
     margin-top: 10px;
 }
-#showZones{
+
+#showZones {
     width: fit-content;
     display: block;
     background-color: rgb(66, 184, 66);
@@ -128,7 +140,8 @@ h2{
 
 
 }
-.main-info{
+
+.main-info {
     width: 40%;
     font-size: large;
     margin-left: 5%;
@@ -137,12 +150,13 @@ h2{
 }
 
 
-#map{
+#map {
     top: 60px;
     right: 0px;
     width: 70%;
 }
-#output{
+
+#data {
     width: 80%;
     display: block;
     margin-left: auto;
@@ -150,7 +164,6 @@ h2{
     padding-bottom: 400px;
 }
 
-/* Tabelle allgemein */
 table {
     width: 80%;
     border-radius: 20px;
@@ -160,94 +173,41 @@ table {
     color: #333;
     margin: 20px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.162);
-  }
-  
-  /* Tabellenkopf */
-  thead {
+}
+
+thead {
     background-color: #f2f2f2;
-  }
-  
-  thead th {
+}
+
+thead th {
     padding: 12px 15px;
     text-align: left;
     font-weight: bold;
     border-bottom: 2px solid #ddd;
-  }
-  
-  /* Tabellenzeilen */
-  tbody tr {
+}
+
+tbody tr {
     transition: background-color 0.3s ease;
-  }
-  
-  tbody tr:hover {
+}
+
+tbody tr:hover {
     background-color: #f9f9f9;
-  }
-  
-  tbody td {
+}
+
+tbody td {
     padding: 10px 15px;
     text-align: left;
-  }
-  
-  /* Alternierende Zeilenfarbe */
-  tbody tr:nth-child(even) {
+}
+
+tbody tr:nth-child(even) {
     background-color: #51a96f2d;
-  }
-  
-  /* Zelleninhalt Ausrichtung */
-  td {
+}
+
+td {
     text-align: left;
-  }
-  
-
-
-@media only screen and (max-width: 900) {
-    #globe{
-        display: none;
-    }
-    #main-content {
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .globe-container{
-        display: none;
-    }
-    #footer-logo{
-        display: none;
-    }
-    .company-name{
-        display: none;
-    }
-    footer{
-        position: relative;
-        font-size: small;
-        width: 90%;
-    }
-    ul{
-        margin-top: 20px;
-    }
-    h1{
-        text-align: center;
-    }
-   
 }
 
-.cookie-banner {
-    position: fixed;
-    bottom: 0%;
-    left: 0%;
-    right: 0%;
-    height: 65%;
-    padding: 5px 14px;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.85);
-    border-radius: 20px  20px 0 0;
-    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.082);
-    color: white;
-    z-index: 2;
-}
-img{
+img {
     width: 10%;
     min-width: 80px;
 }
@@ -264,14 +224,15 @@ img{
 }
 
 
-.close:hover{
+.close:hover {
     background-color: green;
 }
 
-#cookie-info{
+#cookie-info {
     text-decoration: underline;
 }
-#print{
+
+#print {
     width: fit-content;
     display: block;
     background-color: rgb(66, 184, 66);
@@ -285,14 +246,72 @@ img{
 }
 
 @media print {
+
     /* Diese Elemente sollen beim drucken nicht mit angezeigt werden*/
     button {
         display: none;
     }
-    footer{
+
+    footer {
         display: none;
     }
-    #nav-mobile{
+
+    #nav-mobile {
         display: none;
     }
+}
+
+@media only screen and (max-width: 900) {
+    #globe {
+        display: none;
+    }
+
+    #main-content {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .globe-container {
+        display: none;
+    }
+
+    #footer-logo {
+        display: none;
+    }
+
+    .company-name {
+        display: none;
+    }
+
+    footer {
+        position: relative;
+        font-size: small;
+        width: 90%;
+    }
+
+    ul {
+        margin-top: 20px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+}
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    height: 65%;
+    padding: 5px 14px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.082);
+    color: white;
+    z-index: 2;
 }

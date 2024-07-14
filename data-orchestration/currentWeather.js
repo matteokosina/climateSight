@@ -5,7 +5,6 @@
 <current>
     <temperature>12.1</temperature>
     <humidity>76</humidity>
-    <condition value = 'en'>slight rain showers</condition>
     <condition  value = 'de'>leichte Regenschauer</condition>
 </current>
 */
@@ -16,10 +15,10 @@ export async function getCurrentWeather(latitude, longitude) {
     const params = new URLSearchParams({
         latitude: latitude,
         longitude: longitude,
-        hourly: 'temperature_2m,relative_humidity_2m,weather_code', // hier die Art der Daten definiert
+        hourly: 'temperature_2m,relative_humidity_2m,weather_code', // hier wird die Art der Daten definiert
         forecast_days: "2"
     });
-    
+
     try {
         const response = await fetch(`${url}?${params.toString()}`);
         if (!response.ok) {
@@ -35,33 +34,32 @@ export async function getCurrentWeather(latitude, longitude) {
 }
 
 // hier werden die Daten für die kommende Stunde gefilter und in XML konvertiert
-function filterUpcoming(data){
+function filterUpcoming(data) {
 
-const now = new Date();
+    // Ermittlung der naechsten Stunde
+    const now = new Date();
+    const currentHour = now.getUTCHours();
+    const currentDate = now.toISOString().split('T')[0];
+    const nextHourIndex = data.hourly.time.findIndex(time => time.startsWith(currentDate) && new Date(time).getUTCHours() === (currentHour + 1) % 24);
 
+    if (nextHourIndex !== -1) {
+        // Erzeugung der XML-Struktur fuer das aktuelle Wetter ( Wetterprognose der kommenden Stunde )
+        let xmlResult = "<current>";
+        xmlResult += "\n<temperature>" + data.hourly.temperature_2m[nextHourIndex] + "</temperature>";
+        xmlResult += "\n<humidity>" + data.hourly.relative_humidity_2m[nextHourIndex] + "</humidity>";
+        xmlResult += "\n<condition  value = 'de'>" + decodeWeatherCodeDE(data.hourly.weather_code[nextHourIndex]) + "</condition>";
+        xmlResult += "\n</current>"
 
-const currentHour = now.getUTCHours();
-const currentDate = now.toISOString().split('T')[0]; 
-const nextHourIndex = data.hourly.time.findIndex(time => time.startsWith(currentDate) && new Date(time).getUTCHours() === (currentHour + 1) % 24);
-
-if (nextHourIndex !== -1) {
-
-    let xmlResult = "<current>";
-    xmlResult += "\n<temperature>" + data.hourly.temperature_2m[nextHourIndex] + "</temperature>";
-    xmlResult += "\n<humidity>" +  data.hourly.relative_humidity_2m[nextHourIndex] + "</humidity>";
-    xmlResult += "\n<condition value = 'en'>" +  decodeWeatherCodeEN(data.hourly.weather_code[nextHourIndex]) + "</condition>";
-    xmlResult += "\n<condition  value = 'de'>" +  decodeWeatherCodeDE(data.hourly.weather_code[nextHourIndex]) + "</condition>";
-    xmlResult += "\n</current>"
-
-    return(xmlResult)
-} else {
-    console.log('No data available for the upcoming hour.');
-}
+        // Zurueckgeben der erstellten XML-Struktur
+        return (xmlResult)
+    } else {
+        console.log('No data available for the upcoming hour.');
+    }
 
 }
 
 // die API liefert Wetter-Codes die hier in sprechenden Text (auf englisch) konvertiert werden
-function decodeWeatherCodeEN(code){
+function decodeWeatherCodeEN(code) {
     switch (code) {
         case 0:
             return "Clear sky";

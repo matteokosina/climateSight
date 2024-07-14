@@ -1,9 +1,9 @@
-
-
+// Sobald das Dokument geladen ist, wird das XML mittels XSL transformiert
 document.addEventListener('DOMContentLoaded', function () {
     transformXML();
 });
 
+// laden der dafuer notwendigen Dateien
 async function loadFile(url) {
     const response = await fetch(url);
     if (!response.ok) {
@@ -12,6 +12,8 @@ async function loadFile(url) {
     const text = await response.text();
     return new DOMParser().parseFromString(text, "application/xml");
 }
+
+// XSLT verarbeiten und Ergebnis in main-content div laden
 async function transformXML() {
     try {
         const xmlDoc = await loadFile('../static/data/about.xml');
@@ -33,7 +35,6 @@ async function transformXML() {
 
             outputElement.innerHTML = '';  // Clear previous content
             outputElement.appendChild(resultDocument);
-            showCookieBanner()
         } else {
             throw new Error("Your browser does not support XSLT transformations");
         }

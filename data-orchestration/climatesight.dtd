@@ -1,21 +1,30 @@
 <!DOCTYPE data
-[<!ELEMENT data (facts, current, historical)>
-<!ELEMENT facts (capital, flag, altFlag, population)>
+[<!ELEMENT data (facts, current, historical, chart+)>
+<!ELEMENT facts (country, capital, flag, altFlag, population)>
+<!ELEMENT country (#PCDATA)>
 <!ELEMENT capital (#PCDATA)>
 <!ELEMENT flag (#PCDATA)>
 <!ELEMENT altFlag (#PCDATA)>
 <!ELEMENT population (#PCDATA)>
 
-<!ELEMENT current (temperature, humidity, condition+)>
+<!ELEMENT current (temperature, humidity, condition)>
 <!ELEMENT temperature (#PCDATA)>
 <!ELEMENT humidity (#PCDATA)>
 <!ELEMENT condition (#PCDATA)>
 <!ATTLIST condition value CDATA #REQUIRED>
 
-<!ELEMENT historical (year+)>
+<!ELEMENT historical (year*)>
 <!ELEMENT year (average_precipitation_sum, average_temperature_2m_max, snowfall_sum)>
 <!ATTLIST year value CDATA #REQUIRED>
 <!ELEMENT average_precipitation_sum (#PCDATA)>
 <!ELEMENT average_temperature_2m_max (#PCDATA)>
 <!ELEMENT snowfall_sum (#PCDATA)>
+
+<!ELEMENT chart (title, values)>
+<!ATTLIST chart xvalue CDATA #REQUIRED yvalue CDATA #REQUIRED color CDATA #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT values (point*)>
+<!ELEMENT point EMPTY>
+<!ATTLIST point tag CDATA #REQUIRED x CDATA #REQUIRED y CDATA #REQUIRED value CDATA #REQUIRED>
+
 ]>

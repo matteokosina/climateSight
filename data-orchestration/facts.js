@@ -4,6 +4,7 @@
     Das Datenformat sieht wie folgt aus (es handelt sich dabei nur um einen Ausschnitt und wird in orchestrator.js in eine wohlgeformte XML geparsed):
 
 <facts>
+    <country>Bundesrepublik Deutschland</country>
     <capital>Berlin</capital>
     <flag>https://flagcdn.com/de.svg</flag>
     <altFlag>The flag of Germany is composed of three equal horizontal bands of black, red and gold.</altFlag>
@@ -22,26 +23,29 @@ export async function getFacts(country) {
 
         if (facts.length === 0) {
             throw new Error('Informationen for this country are not available.');
-          }
+        }
 
-       console.log()
-       return jsonToXML(facts[0], country);
+        console.log()
+        return jsonToXML(facts[0]);
     } catch (error) {
         console.error('Failed to fetch facts:', error);
         return { error: 'Unable to fetch facts' };
     }
 }
-// Konvertierung der JSON Daten in XML
-function jsonToXML(data, country){
+
+// Konvertierung der erhaltenen JSON Daten in XML
+function jsonToXML(data) {
+
     let xmlResult = "<facts>";
-    // Information ueber Hauptstadt
-    xmlResult += "\n<country>" + data.translations.deu.official  + "</country>";
-    xmlResult += "\n<capital>" + data.capital  + "</capital>";
-    xmlResult += "\n<flag>" +  data.flags.svg + "</flag>";
+    xmlResult += "\n<country>" + data.translations.deu.official + "</country>";
+    xmlResult += "\n<capital>" + data.capital + "</capital>";
+
     // URL zu einer SVG Grafik der Flagge
-    xmlResult += "\n<altFlag>" + data.flags.alt  + "</altFlag>";  
+    xmlResult += "\n<flag>" + data.flags.svg + "</flag>";
+    
     // alt Text für die Flagge          
-    xmlResult += "\n<population>" +  data.population + "</population>";
+    xmlResult += "\n<altFlag>" + data.flags.alt + "</altFlag>";
+    xmlResult += "\n<population>" + data.population + "</population>";
     xmlResult += "\n</facts>\n"
     return xmlResult
 }
