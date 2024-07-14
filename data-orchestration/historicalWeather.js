@@ -84,9 +84,9 @@ function jsonToXML(data) {
     }
    
     //xml += generateChartCoordinates(data);
-    precipition_values =  scaleArray(precipition_values);
-    temperature_values = scaleArray(temperature_values);
-    snowfall_values = scaleArray(snowfall_values);
+    const precipition_coords =  scaleArray(precipition_values);
+    const temperature_coords = scaleArray(temperature_values);
+    const snowfall_coords = scaleArray(snowfall_values);
 
 
     //        xmlData += '<chart xvalue="Zeit in Jahren" yvalue="keine in °C" color="blue">\n<title>Sample Line Chart</title>\n <values>\n<point tag="2010" x="0" y="00" />\n<point tag="2011" x="100" y="60" />\n<point tag="2012" x="200" y="122" />\n<point tag="2013" x="300" y="30" />\n<point tag="2014" x="400" y="5" />\n</values>\n</chart>';
@@ -95,7 +95,7 @@ function jsonToXML(data) {
     xml += '\n<values>\n';
     for (let i = 0; i < precipition_values.length; i++) {
        
-        xml += '<point tag="' + year_list[i] + '" x="' + (i*35) + '" y="' + precipition_values[i] + '" />\n';
+        xml += '<point tag="' + year_list[i] + '" x="' + (i*35) + '" y="' + precipition_coords[i] + '" value="' + Math.round(precipition_values[i]*100)/100.0 + '" />\n';
         
     }
     xml += '</values>\n';
@@ -105,7 +105,7 @@ function jsonToXML(data) {
     xml += '\n<values>\n';
     for (let i = 0; i < temperature_values.length; i++) {
        
-        xml += '<point tag="' + year_list[i] + '" x="' + (i*35) + '" y="' + temperature_values[i] + '" />\n';
+        xml += '<point tag="' + year_list[i] + '" x="' + (i*35) + '" y="' + temperature_coords[i] + '" value="' + Math.round(temperature_values[i]*100)/100.0 + '" />\n';
         
     }
     xml += '</values>\n';
@@ -115,7 +115,7 @@ function jsonToXML(data) {
     xml += '\n<values>\n';
     for (let i = 0; i < snowfall_values.length; i++) {
        
-        xml += '<point tag="' + year_list[i] + '" x="' + (i*35) + '" y="' + snowfall_values[i] + '" />\n';
+        xml += '<point tag="' + year_list[i] + '" x="' + (i*35) + '" y="' + snowfall_coords[i] + '" value="' + Math.round(snowfall_values[i]*100)/100.0 + '" />\n';
         
     }
     xml += '</values>\n';
@@ -153,9 +153,9 @@ function calculateYearlyAverages(data) {
     let yearlyAverages = {};
     for (let year in yearlyData) {
         yearlyAverages[year] = {
-            average_precipitation_sum: yearlyData[year].precipitation_sum / yearlyData[year].count,
+            average_precipitation_sum: yearlyData[year].precipitation_sum,
             average_temperature_2m_max: yearlyData[year].temperature_2m_max / yearlyData[year].count,
-            snowfall_sum: yearlyData[year].snowfall_sum / yearlyData[year].count
+            snowfall_sum: yearlyData[year].snowfall_sum
         };
     }
 
@@ -163,31 +163,27 @@ function calculateYearlyAverages(data) {
 }
 
 function scaleArray(data) {
-    if (data.length === 0) {
+    if (data.length == 0) {
       return [];
     }
     // Finde den kleinsten Wert im Array
     const minValue = Math.min(...data);
-    const originalMinValue = minValue; // Speichere den ursprünglichen minimalen Wert
-    
-    // Falls der kleinste Wert negativ ist, verschiebe alle Werte um den absoluten Betrag des kleinsten Wertes
-    if (minValue < 0) {
-      data = data.map(value => value - minValue);
-    }
-    
-    // Finde den neuen maximalen Wert nach der Verschiebung
     const maxValue = Math.max(...data);
+    let scaleFactor;
+    if (maxValue > 0) {
+        // Berechne den Skalierungsfaktor
+        scaleFactor = 300 / maxValue;
+    } else if (maxValue < 0) {
+        scaleFactor = 100/ -minValue;
+    } else {
+        return data;
+    }
+
     
-    // Berechne den Skalierungsfaktor
-    const scaleFactor = 600 / Math.round(maxValue);
     
     // Skaliere die Werte
-    data = data.map(value => Math.round(value * scaleFactor));
-    
-    // Falls der ursprüngliche minValue negativ war, subtrahiere den verschobenen Wert mal den Skalierungsfaktor
-    if (originalMinValue < 0) {
-      data = data.map(value => Math.round(value - (originalMinValue * scaleFactor)));
-    }
+    data = data.map(value => {
+        return Math.floor(value * scaleFactor);});
     return data;
   }
   

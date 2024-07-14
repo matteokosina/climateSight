@@ -1,11 +1,14 @@
 
 // cookie check
 if (!cookiesAccepted() && location.pathname != "/index.html") {
-    location.assign("http://" + location.host + "/index.html");
+    console.log(location.host);
+    location.assign("http://" + location.host + "/climateSight/index.html");
 }
 function cookiesAccepted() {
     return (localStorage.getItem("cookieSeen") == "shown");
 }
+
+let zonesDrawn = false;
 
 let map;
 // Initialize Leaflet map
@@ -47,12 +50,14 @@ function initMap(){
 
 // Function to add KML layer to the map
 function addKMLToMap(kmlData) {
+    if (zonesDrawn) {
+        return;
+    }
     var parser = new DOMParser();
     var xmlDoc = parser.parseFromString(kmlData, "text/xml");
 
-    var coordinates = [];
-    console.log
     for (let i = 0; i < xmlDoc.getElementsByTagName('kml:coordinates').length; i++) {
+        var coordinates = [];
 
 
         var coords = xmlDoc.getElementsByTagName('kml:coordinates')[i].textContent.trim().split(' ');
@@ -68,8 +73,8 @@ function addKMLToMap(kmlData) {
 
         if (coordinates.length > 0) {
             var polygon = L.polygon(coordinates, {
-                color: getNextColor(i),
-                fillColor: getNextColor(i),
+                color: getColor(i),
+                fillColor: getColor(i),
                 fillOpacity: 0.5
             }).addTo(map);
 
@@ -80,21 +85,21 @@ function addKMLToMap(kmlData) {
             console.error('Invalid or empty coordinates in KML file.');
         }
     }
+    zonesDrawn = true;
 }
 
-function getNextColor(index) {
-    index = index % 5;
+function getColor(index) {
     switch (index) {
         case 0:
             return "blue"
         case 1:
-            return "green"
+            return "magenta"
         case 2:
             return "orange"
         case 3:
             return "magenta"
         case 4:
-            return "teal"
+            return "blue"
         default:
             return "red"
     }

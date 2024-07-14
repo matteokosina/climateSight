@@ -22,15 +22,14 @@
             <title>Wir nutzen essentielle Cookies</title>
             <icon src="./static/assets/cookie.png"/>
             <text>
-            Wir verwenden Cookies und ähnliche Technologien auf unserer Website und verarbeiten personenbezogene Daten von dir (z.B. IP-Adresse), um z.B. Inhalte und Anzeigen zu personalisieren, Medien von Drittanbietern einzubinden oder Zugriffe auf unsere Website zu analysieren. Die Datenverarbeitung kann auch erst in Folge gesetzter Cookies stattfinden. Wir teilen diese Daten mit Dritten, die wir in den Privatsphäre-Einstellungen benennen.
-            Die Datenverarbeitung kann mit deiner Einwilligung oder auf Basis eines berechtigten Interesses erfolgen, dem du in den Privatsphäre-Einstellungen widersprechen kannst. Du hast das Recht, nicht einzuwilligen und deine Einwilligung zu einem späteren Zeitpunkt zu ändern oder zu widerrufen. Weitere Informationen zur Verwendung deiner Daten findest du in unserer Datenschutzerklärung.
-            Du bist unter 16 Jahre alt? Leider darfst du diesem Service nicht selbst zustimmen, um diese Inhalte zu sehen. Bitte deine Eltern oder Erziehungsberechtigten, dem Service mit dir zuzustimmen!
-            Wenn du alle Services akzeptierst, erlaubst du, dass (Cookies eintragen)
-             geladen werden. Diese sind nach ihrem Zweck in Gruppen Essenziell1, Funktional2, Statistik3 und Marketing4 unterteilt (Zugehörigkeit durch hochgestellte Zahlen gekennzeichnet). Außerdem werden die
-            (Essenzielle Cookies eintragen)
-             auf der Grundlage eines berechtigten Interesses geladen.
+            Wir verwenden Cookies und ähnliche Technologien auf unserer Website und verarbeiten personenbezogene Daten (z.B. IP-Adresse), um z.B. Inhalte und Anzeigen zu personalisieren, Medien von Drittanbietern einzubinden oder Zugriffe auf unsere Website zu analysieren. Die Datenverarbeitung kann erst in Folge gesetzter Cookies stattfinden. Wir teilen diese Daten mit Dritten.
+            Die Datenverarbeitung kann mit Ihrer Einwilligung oder auf Basis eines berechtigten Interesses erfolgen. Sie haben das Recht, nicht einzuwilligen und Ihre Einwilligung zu einem späteren Zeitpunkt zu ändern oder zu widerrufen. Weitere Informationen zur Verwendung deiner Daten finden Sie in unserer Datenschutzerklärung.
+            Wenn Sie mit der Nutzung von Cookies und der Verarbeitung Ihrer Daten nicht einverstanden sind, können Sie diese Seite leider nicht nutzen.
+
+            Sie sind unter 16 Jahre alt? Leider dürfen Sie diesem Service nicht selbst zustimmen, um diese Inhalte zu sehen. Bitten Sie Ihre Eltern oder Erziehungsberechtigten, dem Service mit Ihnen zuzustimmen!
+            Wenn Sie die Services akzeptieren, erlauben Sie, dass Cookies geladen werden. Außerdem werden die Cookies auf der Grundlage eines berechtigten Interesses geladen.
             </text>
-            <link ref="#">Weitere Informationen &#8599;</link>
+            <link ref="../imprint/imprint.html">Weitere Informationen &#8599;</link>
             <accept>Akzeptieren und weiter</accept>
 
         </cookies>
