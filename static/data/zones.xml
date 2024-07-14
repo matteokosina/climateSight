@@ -1,120 +1,489 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <geodata>
-<zone name="Tropisch">
-<coordinates latitude="20.029214" longitude="-16.360779"/>
-<coordinates latitude="20.029214" longitude="-16.360779"/>
-<coordinates latitude="16.524698" longitude="-16.360779"/>
-<coordinates latitude="16.524698" longitude="-16.360779"/>
-<coordinates latitude="14.321993" longitude="-16.888083"/>
-<coordinates latitude="14.321993" longitude="-16.888083"/>
-<coordinates latitude="11.064256" longitude="-15.833474"/>
-<coordinates latitude="11.064256" longitude="-15.833474"/>
-<coordinates latitude="9.854256" longitude="-13.724256"/>
-<coordinates latitude="9.854256" longitude="-13.724256"/>
-<coordinates latitude="6.549049" longitude="-12.142343"/>
-<coordinates latitude="6.549049" longitude="-12.142343"/>
-<coordinates latitude="4.098918" longitude="-8.275443"/>
-<coordinates latitude="4.098918" longitude="-8.275443"/>
-<coordinates latitude="5.850040" longitude="-3.353934"/>
-<coordinates latitude="5.850040" longitude="-3.353934"/>
-<coordinates latitude="4.624732" longitude="-1.596253"/>
-<coordinates latitude="4.624732" longitude="-1.596253"/>
-<coordinates latitude="6.374384" longitude="3.852561"/>
-<coordinates latitude="6.374384" longitude="3.852561"/>
-<coordinates latitude="5.325204" longitude="5.258706"/>
-<coordinates latitude="5.325204" longitude="5.258706"/>
-<coordinates latitude="4.799919" longitude="8.949838"/>
-<coordinates latitude="4.799919" longitude="8.949838"/>
-<coordinates latitude="0.411009" longitude="9.652910"/>
-<coordinates latitude="0.411009" longitude="9.652910"/>
-<coordinates latitude="-1.698114" longitude="8.598301"/>
-<coordinates latitude="-1.698114" longitude="8.598301"/>
-<coordinates latitude="-5.206807" longitude="11.586360"/>
-<coordinates latitude="-5.206807" longitude="11.586360"/>
-<coordinates latitude="-8.696034" longitude="12.992505"/>
-<coordinates latitude="-8.696034" longitude="12.992505"/>
-<coordinates latitude="-12.839534" longitude="13.519810"/>
-<coordinates latitude="-12.839534" longitude="13.519810"/>
-<coordinates latitude="-16.241983" longitude="11.762128"/>
-<coordinates latitude="-16.241983" longitude="11.762128"/>
-<coordinates latitude="-18.423217" longitude="12.113665"/>
-<coordinates latitude="-18.423217" longitude="12.113665"/>
-<coordinates latitude="-22.538830" longitude="13.695578"/>
-<coordinates latitude="-22.538830" longitude="13.695578"/>
-<coordinates latitude="-26.535354" longitude="15.101723"/>
-<coordinates latitude="-26.535354" longitude="15.101723"/>
-<coordinates latitude="-29.176998" longitude="16.507869"/>
-<coordinates latitude="-29.176998" longitude="16.507869"/>
-<coordinates latitude="-31.602764" longitude="18.617087"/>
-<coordinates latitude="-31.602764" longitude="18.617087"/>
-<coordinates latitude="-33.674882" longitude="18.089782"/>
-<coordinates latitude="-33.674882" longitude="18.089782"/>
-<coordinates latitude="-34.981304" longitude="20.550537"/>
-<coordinates latitude="-34.981304" longitude="20.550537"/>
-<coordinates latitude="-34.403184" longitude="25.823582"/>
-<coordinates latitude="-34.403184" longitude="25.823582"/>
-<coordinates latitude="-31.152544" longitude="30.393554"/>
-<coordinates latitude="-31.152544" longitude="30.393554"/>
-<coordinates latitude="-26.692510" longitude="32.854309"/>
-<coordinates latitude="-26.692510" longitude="32.854309"/>
-<coordinates latitude="-23.509485" longitude="35.139295"/>
-<coordinates latitude="-23.509485" longitude="35.139295"/>
-<coordinates latitude="-17.251923" longitude="36.721208"/>
-<coordinates latitude="-17.251923" longitude="36.721208"/>
-<coordinates latitude="-16.073146" longitude="39.357731"/>
-<coordinates latitude="-16.073146" longitude="39.357731"/>
-<coordinates latitude="-10.602180" longitude="40.060804"/>
-<coordinates latitude="-10.602180" longitude="40.060804"/>
-<coordinates latitude="-3.278604" longitude="40.236572"/>
-<coordinates latitude="-3.278604" longitude="40.236572"/>
-<coordinates latitude="0.762552" longitude="43.576167"/>
-<coordinates latitude="0.762552" longitude="43.576167"/>
-<coordinates latitude="3.748180" longitude="47.267298"/>
-<coordinates latitude="3.748180" longitude="47.267298"/>
-<coordinates latitude="8.118088" longitude="50.431126"/>
-<coordinates latitude="8.118088" longitude="50.431126"/>
-<coordinates latitude="11.753483" longitude="51.134198"/>
-<coordinates latitude="11.753483" longitude="51.134198"/>
-<coordinates latitude="10.027398" longitude="44.806544"/>
-<coordinates latitude="10.027398" longitude="44.806544"/>
-<coordinates latitude="12.955433" longitude="42.873094"/>
-<coordinates latitude="12.955433" longitude="42.873094"/>
-<coordinates latitude="15.171939" longitude="40.060804"/>
-<coordinates latitude="15.171939" longitude="40.060804"/>
-<coordinates latitude="18.868983" longitude="37.951585"/>
-<coordinates latitude="18.868983" longitude="37.951585"/>
-<coordinates latitude="22.972670" longitude="36.721208"/>
-<coordinates latitude="22.972670" longitude="36.721208"/>
-<coordinates latitude="28.511287" longitude="32.854309"/>
-<coordinates latitude="28.511287" longitude="32.854309"/>
-<coordinates latitude="31.404393" longitude="30.745091"/>
-<coordinates latitude="31.404393" longitude="30.745091"/>
-<coordinates latitude="31.404393" longitude="25.823582"/>
-<coordinates latitude="31.404393" longitude="25.823582"/>
-<coordinates latitude="33.187320" longitude="22.132450"/>
-<coordinates latitude="33.187320" longitude="22.132450"/>
-<coordinates latitude="30.044479" longitude="20.199000"/>
-<coordinates latitude="30.044479" longitude="20.199000"/>
-<coordinates latitude="33.481043" longitude="10.707519"/>
-<coordinates latitude="33.481043" longitude="10.707519"/>
-<coordinates latitude="37.626514" longitude="9.652910"/>
-<coordinates latitude="37.626514" longitude="9.652910"/>
-<coordinates latitude="36.363015" longitude="2.622183"/>
-<coordinates latitude="36.363015" longitude="2.622183"/>
-<coordinates latitude="35.365862" longitude="-2.299325"/>
-<coordinates latitude="35.365862" longitude="-2.299325"/>
-<coordinates latitude="35.652042" longitude="-5.638920"/>
-<coordinates latitude="35.652042" longitude="-5.638920"/>
-<coordinates latitude="33.334305" longitude="-7.748139"/>
-<coordinates latitude="33.334305" longitude="-7.748139"/>
-<coordinates latitude="31.554305" longitude="-9.330052"/>
-<coordinates latitude="31.554305" longitude="-9.330052"/>
-<coordinates latitude="29.127322" longitude="-9.857357"/>
-<coordinates latitude="29.127322" longitude="-9.857357"/>
-<coordinates latitude="27.424550" longitude="-13.372720"/>
-<coordinates latitude="27.424550" longitude="-13.372720"/>
-<coordinates latitude="24.581210" longitude="-16.185011"/>
-<coordinates latitude="24.581210" longitude="-16.185011"/>
-<coordinates latitude="20.029214" longitude="-16.360779"/>
-</zone>
+  <zone name="Polarzone">
+    <coordinates latitude="59.512029" longitude="-140.273438"/>
+    <coordinates latitude="59.512029" longitude="-140.273438"/>
+    <coordinates latitude="61.585492" longitude="-133.593750"/>
+    <coordinates latitude="61.585492" longitude="-133.593750"/>
+    <coordinates latitude="62.895218" longitude="-125.859375"/>
+    <coordinates latitude="62.895218" longitude="-125.859375"/>
+    <coordinates latitude="63.371832" longitude="-119.179688"/>
+    <coordinates latitude="63.371832" longitude="-119.179688"/>
+    <coordinates latitude="63.371832" longitude="-110.742188"/>
+    <coordinates latitude="63.371832" longitude="-110.742188"/>
+    <coordinates latitude="63.054959" longitude="-102.656250"/>
+    <coordinates latitude="63.054959" longitude="-102.656250"/>
+    <coordinates latitude="62.247466" longitude="-94.921875"/>
+    <coordinates latitude="62.247466" longitude="-94.921875"/>
+    <coordinates latitude="62.083315" longitude="-86.835938"/>
+    <coordinates latitude="62.083315" longitude="-86.835938"/>
+    <coordinates latitude="61.918271" longitude="-81.210938"/>
+    <coordinates latitude="61.918271" longitude="-81.210938"/>
+    <coordinates latitude="61.918271" longitude="-76.992188"/>
+    <coordinates latitude="61.918271" longitude="-76.992188"/>
+    <coordinates latitude="61.249102" longitude="-63.281250"/>
+    <coordinates latitude="61.249102" longitude="-63.281250"/>
+    <coordinates latitude="61.249102" longitude="-53.085938"/>
+    <coordinates latitude="61.249102" longitude="-53.085938"/>
+    <coordinates latitude="61.249102" longitude="-45.000000"/>
+    <coordinates latitude="61.249102" longitude="-45.000000"/>
+    <coordinates latitude="61.249102" longitude="-39.726563"/>
+    <coordinates latitude="61.249102" longitude="-39.726563"/>
+    <coordinates latitude="61.249102" longitude="-26.718750"/>
+    <coordinates latitude="61.249102" longitude="-26.718750"/>
+    <coordinates latitude="61.249102" longitude="-11.953125"/>
+    <coordinates latitude="61.249102" longitude="-11.953125"/>
+    <coordinates latitude="61.249102" longitude="-5.976563"/>
+    <coordinates latitude="61.249102" longitude="-5.976563"/>
+    <coordinates latitude="64.605038" longitude="8.437500"/>
+    <coordinates latitude="64.605038" longitude="8.437500"/>
+    <coordinates latitude="64.605038" longitude="16.875000"/>
+    <coordinates latitude="64.605038" longitude="16.875000"/>
+    <coordinates latitude="64.605038" longitude="22.851563"/>
+    <coordinates latitude="64.605038" longitude="22.851563"/>
+    <coordinates latitude="64.605038" longitude="27.773438"/>
+    <coordinates latitude="64.605038" longitude="27.773438"/>
+    <coordinates latitude="64.605038" longitude="36.210938"/>
+    <coordinates latitude="64.605038" longitude="36.210938"/>
+    <coordinates latitude="64.904910" longitude="39.726563"/>
+    <coordinates latitude="64.904910" longitude="39.726563"/>
+    <coordinates latitude="65.494741" longitude="50.273438"/>
+    <coordinates latitude="65.494741" longitude="50.273438"/>
+    <coordinates latitude="65.494741" longitude="54.843750"/>
+    <coordinates latitude="65.494741" longitude="54.843750"/>
+    <coordinates latitude="65.494741" longitude="57.304688"/>
+    <coordinates latitude="65.494741" longitude="57.304688"/>
+    <coordinates latitude="65.494741" longitude="61.171875"/>
+    <coordinates latitude="65.494741" longitude="61.171875"/>
+    <coordinates latitude="65.494741" longitude="61.875000"/>
+    <coordinates latitude="65.494741" longitude="61.875000"/>
+    <coordinates latitude="65.494741" longitude="73.476563"/>
+    <coordinates latitude="65.494741" longitude="73.476563"/>
+    <coordinates latitude="65.784758" longitude="88.242188"/>
+    <coordinates latitude="65.784758" longitude="88.242188"/>
+    <coordinates latitude="64.301822" longitude="100.546875"/>
+    <coordinates latitude="64.301822" longitude="100.546875"/>
+    <coordinates latitude="64.301822" longitude="114.960938"/>
+    <coordinates latitude="64.301822" longitude="114.960938"/>
+    <coordinates latitude="65.928554" longitude="124.804688"/>
+    <coordinates latitude="65.928554" longitude="124.804688"/>
+    <coordinates latitude="65.640155" longitude="150.468750"/>
+    <coordinates latitude="65.640155" longitude="150.468750"/>
+    <coordinates latitude="64.301822" longitude="161.367188"/>
+    <coordinates latitude="64.301822" longitude="161.367188"/>
+    <coordinates latitude="63.685248" longitude="172.968750"/>
+    <coordinates latitude="63.685248" longitude="172.968750"/>
+    <coordinates latitude="62.895218" longitude="189.492188"/>
+    <coordinates latitude="62.895218" longitude="189.492188"/>
+    <coordinates latitude="62.410729" longitude="202.500000"/>
+    <coordinates latitude="62.410729" longitude="202.500000"/>
+    <coordinates latitude="63.054959" longitude="220.429688"/>
+    <coordinates latitude="63.054959" longitude="220.429688"/>
+    <coordinates latitude="90.0" longitude="180.0"/>
+    <coordinates latitude="90.0" longitude="-180.0"/>
+  </zone>
+  <!-- <zone name="Temperierte Zone">
+<coordinates latitude="23.845650" longitude="220.078125"/>
+<coordinates latitude="23.845650" longitude="220.078125"/>
+<coordinates latitude="23.845650" longitude="211.992188"/>
+<coordinates latitude="23.845650" longitude="211.992188"/>
+<coordinates latitude="23.845650" longitude="198.632813"/>
+<coordinates latitude="23.845650" longitude="198.632813"/>
+<coordinates latitude="23.845650" longitude="190.898438"/>
+<coordinates latitude="23.845650" longitude="190.898438"/>
+<coordinates latitude="21.902278" longitude="180.351563"/>
+<coordinates latitude="21.902278" longitude="180.351563"/>
+<coordinates latitude="22.877440" longitude="170.859375"/>
+<coordinates latitude="22.877440" longitude="170.859375"/>
+<coordinates latitude="27.332735" longitude="160.312500"/>
+<coordinates latitude="27.332735" longitude="160.312500"/>
+<coordinates latitude="31.316101" longitude="143.437500"/>
+<coordinates latitude="31.316101" longitude="143.437500"/>
+<coordinates latitude="31.316101" longitude="129.375000"/>
+<coordinates latitude="31.316101" longitude="129.375000"/>
+<coordinates latitude="27.955591" longitude="112.500000"/>
+<coordinates latitude="27.955591" longitude="112.500000"/>
+<coordinates latitude="28.265682" longitude="100.898438"/>
+<coordinates latitude="28.265682" longitude="100.898438"/>
+<coordinates latitude="31.615966" longitude="92.109375"/>
+<coordinates latitude="31.615966" longitude="92.109375"/>
+<coordinates latitude="31.316101" longitude="80.859375"/>
+<coordinates latitude="31.316101" longitude="80.859375"/>
+<coordinates latitude="31.316101" longitude="80.507813"/>
+<coordinates latitude="31.316101" longitude="80.507813"/>
+<coordinates latitude="30.126124" longitude="73.652344"/>
+<coordinates latitude="30.126124" longitude="73.652344"/>
+<coordinates latitude="29.056170" longitude="65.742188"/>
+<coordinates latitude="29.056170" longitude="65.742188"/>
+<coordinates latitude="28.594169" longitude="53.261719"/>
+<coordinates latitude="28.594169" longitude="53.261719"/>
+<coordinates latitude="26.725987" longitude="43.769531"/>
+<coordinates latitude="26.725987" longitude="43.769531"/>
+<coordinates latitude="26.568877" longitude="34.277344"/>
+<coordinates latitude="26.568877" longitude="34.277344"/>
+<coordinates latitude="23.059516" longitude="25.312500"/>
+<coordinates latitude="23.059516" longitude="25.312500"/>
+<coordinates latitude="26.411551" longitude="18.808594"/>
+<coordinates latitude="26.411551" longitude="18.808594"/>
+<coordinates latitude="27.974998" longitude="7.558594"/>
+<coordinates latitude="27.974998" longitude="7.558594"/>
+<coordinates latitude="28.748397" longitude="2.285156"/>
+<coordinates latitude="28.748397" longitude="2.285156"/>
+<coordinates latitude="28.748397" longitude="-4.218750"/>
+<coordinates latitude="28.748397" longitude="-4.218750"/>
+<coordinates latitude="28.594169" longitude="-19.511719"/>
+<coordinates latitude="28.594169" longitude="-19.511719"/>
+<coordinates latitude="28.285033" longitude="-39.023438"/>
+<coordinates latitude="28.285033" longitude="-39.023438"/>
+<coordinates latitude="29.056170" longitude="-57.128906"/>
+<coordinates latitude="29.056170" longitude="-57.128906"/>
+<coordinates latitude="31.484893" longitude="-66.621094"/>
+<coordinates latitude="31.484893" longitude="-66.621094"/>
+<coordinates latitude="31.484893" longitude="-77.871094"/>
+<coordinates latitude="31.484893" longitude="-77.871094"/>
+<coordinates latitude="32.231390" longitude="-87.187500"/>
+<coordinates latitude="32.231390" longitude="-87.187500"/>
+<coordinates latitude="31.784217" longitude="-93.867188"/>
+<coordinates latitude="31.634676" longitude="-98.085938"/>
+<coordinates latitude="30.126124" longitude="-104.765625"/>
+<coordinates latitude="30.429730" longitude="-119.179688"/>
+<coordinates latitude="30.429730" longitude="-119.179688"/>
+<coordinates latitude="31.334871" longitude="-129.550781"/>
+<coordinates latitude="31.334871" longitude="-129.550781"/>
+<coordinates latitude="31.334871" longitude="-141.328125"/>
+<coordinates latitude="31.334871" longitude="-141.328125"/>
+<coordinates latitude="32.824211" longitude="-156.445313"/>
+<coordinates latitude="32.824211" longitude="-156.445313"/>
+<coordinates latitude="59.512029" longitude="-140.273438"/>
+<coordinates latitude="59.512029" longitude="-140.273438"/>
+<coordinates latitude="61.585492" longitude="-133.593750"/>
+<coordinates latitude="61.585492" longitude="-133.593750"/>
+<coordinates latitude="62.895218" longitude="-125.859375"/>
+<coordinates latitude="62.895218" longitude="-125.859375"/>
+<coordinates latitude="63.371832" longitude="-119.179688"/>
+<coordinates latitude="63.371832" longitude="-119.179688"/>
+<coordinates latitude="63.371832" longitude="-110.742188"/>
+<coordinates latitude="63.371832" longitude="-110.742188"/>
+<coordinates latitude="63.054959" longitude="-102.656250"/>
+<coordinates latitude="63.054959" longitude="-102.656250"/>
+<coordinates latitude="62.247466" longitude="-94.921875"/>
+<coordinates latitude="62.247466" longitude="-94.921875"/>
+<coordinates latitude="62.083315" longitude="-86.835938"/>
+<coordinates latitude="62.083315" longitude="-86.835938"/>
+<coordinates latitude="61.918271" longitude="-81.210938"/>
+<coordinates latitude="61.918271" longitude="-81.210938"/>
+<coordinates latitude="61.918271" longitude="-76.992188"/>
+<coordinates latitude="61.918271" longitude="-76.992188"/>
+<coordinates latitude="61.249102" longitude="-63.281250"/>
+<coordinates latitude="61.249102" longitude="-63.281250"/>
+<coordinates latitude="61.249102" longitude="-53.085938"/>
+<coordinates latitude="61.249102" longitude="-53.085938"/>
+<coordinates latitude="61.249102" longitude="-45.000000"/>
+<coordinates latitude="61.249102" longitude="-45.000000"/>
+<coordinates latitude="61.249102" longitude="-39.726563"/>
+<coordinates latitude="61.249102" longitude="-39.726563"/>
+<coordinates latitude="61.249102" longitude="-26.718750"/>
+<coordinates latitude="61.249102" longitude="-26.718750"/>
+<coordinates latitude="61.249102" longitude="-11.953125"/>
+<coordinates latitude="61.249102" longitude="-11.953125"/>
+<coordinates latitude="61.249102" longitude="-5.976563"/>
+<coordinates latitude="61.249102" longitude="-5.976563"/>
+<coordinates latitude="64.605038" longitude="8.437500"/>
+<coordinates latitude="64.605038" longitude="8.437500"/>
+<coordinates latitude="64.605038" longitude="16.875000"/>
+<coordinates latitude="64.605038" longitude="16.875000"/>
+<coordinates latitude="64.605038" longitude="22.851563"/>
+<coordinates latitude="64.605038" longitude="22.851563"/>
+<coordinates latitude="64.605038" longitude="27.773438"/>
+<coordinates latitude="64.605038" longitude="27.773438"/>
+<coordinates latitude="64.605038" longitude="36.210938"/>
+<coordinates latitude="64.605038" longitude="36.210938"/>
+<coordinates latitude="64.904910" longitude="39.726563"/>
+<coordinates latitude="64.904910" longitude="39.726563"/>
+<coordinates latitude="65.494741" longitude="50.273438"/>
+<coordinates latitude="65.494741" longitude="50.273438"/>
+<coordinates latitude="65.494741" longitude="54.843750"/>
+<coordinates latitude="65.494741" longitude="54.843750"/>
+<coordinates latitude="65.494741" longitude="57.304688"/>
+<coordinates latitude="65.494741" longitude="57.304688"/>
+<coordinates latitude="65.494741" longitude="61.171875"/>
+<coordinates latitude="65.494741" longitude="61.171875"/>
+<coordinates latitude="65.494741" longitude="61.875000"/>
+<coordinates latitude="65.494741" longitude="61.875000"/>
+<coordinates latitude="65.494741" longitude="73.476563"/>
+<coordinates latitude="65.494741" longitude="73.476563"/>
+<coordinates latitude="65.784758" longitude="88.242188"/>
+<coordinates latitude="65.784758" longitude="88.242188"/>
+<coordinates latitude="64.301822" longitude="100.546875"/>
+<coordinates latitude="64.301822" longitude="100.546875"/>
+<coordinates latitude="64.301822" longitude="114.960938"/>
+<coordinates latitude="64.301822" longitude="114.960938"/>
+<coordinates latitude="65.928554" longitude="124.804688"/>
+<coordinates latitude="65.928554" longitude="124.804688"/>
+<coordinates latitude="65.640155" longitude="150.468750"/>
+<coordinates latitude="65.640155" longitude="150.468750"/>
+<coordinates latitude="64.301822" longitude="161.367188"/>
+<coordinates latitude="64.301822" longitude="161.367188"/>
+<coordinates latitude="63.685248" longitude="172.968750"/>
+<coordinates latitude="63.685248" longitude="172.968750"/>
+<coordinates latitude="62.895218" longitude="189.492188"/>
+<coordinates latitude="62.895218" longitude="189.492188"/>
+<coordinates latitude="62.410729" longitude="202.500000"/>
+<coordinates latitude="62.410729" longitude="202.500000"/>
+<coordinates latitude="63.054959" longitude="220.429688"/>
+<coordinates latitude="63.054959" longitude="220.429688"/>
+</zone> -->
+  <!-- <zone name="Tropische Zone">
+<coordinates latitude="-21.657428" longitude="-102.656250"/>
+<coordinates latitude="-21.657428" longitude="-102.656250"/>
+<coordinates latitude="-20.673905" longitude="-90.000000"/>
+<coordinates latitude="-20.673905" longitude="-90.000000"/>
+<coordinates latitude="-20.673905" longitude="-80.156250"/>
+<coordinates latitude="-20.673905" longitude="-80.156250"/>
+<coordinates latitude="-20.673905" longitude="-73.125000"/>
+<coordinates latitude="-20.673905" longitude="-73.125000"/>
+<coordinates latitude="-21.330315" longitude="-68.203125"/>
+<coordinates latitude="-21.330315" longitude="-68.203125"/>
+<coordinates latitude="-22.958393" longitude="-59.062500"/>
+<coordinates latitude="-22.958393" longitude="-59.062500"/>
+<coordinates latitude="-28.652031" longitude="-50.625000"/>
+<coordinates latitude="-28.652031" longitude="-50.625000"/>
+<coordinates latitude="-29.573457" longitude="-40.429688"/>
+<coordinates latitude="-29.573457" longitude="-40.429688"/>
+<coordinates latitude="-29.573457" longitude="-16.875000"/>
+<coordinates latitude="-29.573457" longitude="-16.875000"/>
+<coordinates latitude="-30.183122" longitude="8.437500"/>
+<coordinates latitude="-30.183122" longitude="8.437500"/>
+<coordinates latitude="-29.878755" longitude="18.984375"/>
+<coordinates latitude="-29.878755" longitude="18.984375"/>
+<coordinates latitude="-31.989442" longitude="30.585938"/>
+<coordinates latitude="-31.989442" longitude="30.585938"/>
+<coordinates latitude="-36.066862" longitude="46.406250"/>
+<coordinates latitude="-36.066862" longitude="46.406250"/>
+<coordinates latitude="-33.468108" longitude="62.929688"/>
+<coordinates latitude="-33.468108" longitude="62.929688"/>
+<coordinates latitude="-29.878755" longitude="78.046875"/>
+<coordinates latitude="-29.878755" longitude="78.046875"/>
+<coordinates latitude="-23.281719" longitude="90.000000"/>
+<coordinates latitude="-23.281719" longitude="90.000000"/>
+<coordinates latitude="-18.020528" longitude="109.335938"/>
+<coordinates latitude="-18.020528" longitude="109.335938"/>
+<coordinates latitude="-18.020528" longitude="122.695313"/>
+<coordinates latitude="-18.020528" longitude="122.695313"/>
+<coordinates latitude="-18.020528" longitude="130.781250"/>
+<coordinates latitude="-18.020528" longitude="130.781250"/>
+<coordinates latitude="-20.344627" longitude="142.734375"/>
+<coordinates latitude="-20.344627" longitude="142.734375"/>
+<coordinates latitude="-21.983801" longitude="159.257813"/>
+<coordinates latitude="-21.983801" longitude="159.257813"/>
+<coordinates latitude="-27.098254" longitude="170.507813"/>
+<coordinates latitude="-27.098254" longitude="170.507813"/>
+<coordinates latitude="-27.098254" longitude="171.562500"/>
+<coordinates latitude="-27.235095" longitude="183.339844"/>
+<coordinates latitude="-27.235095" longitude="183.339844"/>
+<coordinates latitude="-27.547242" longitude="195.820313"/>
+<coordinates latitude="-27.547242" longitude="195.820313"/>
+<coordinates latitude="-25.977799" longitude="209.355469"/>
+<coordinates latitude="-25.977799" longitude="209.355469"/>
+<coordinates latitude="-27.926474" longitude="222.099609"/>
+<coordinates latitude="-27.926474" longitude="222.099609"/>
+<coordinates latitude="-28.545926" longitude="248.730469"/>
+<coordinates latitude="-28.545926" longitude="248.730469"/>
+<coordinates latitude="-30.836215" longitude="260.156250"/>
+<coordinates latitude="-30.836215" longitude="260.156250"/>
+<coordinates latitude="23.845650" longitude="220.078125"/>
+<coordinates latitude="23.845650" longitude="220.078125"/>
+<coordinates latitude="23.845650" longitude="211.992188"/>
+<coordinates latitude="23.845650" longitude="211.992188"/>
+<coordinates latitude="23.845650" longitude="198.632813"/>
+<coordinates latitude="23.845650" longitude="198.632813"/>
+<coordinates latitude="23.845650" longitude="190.898438"/>
+<coordinates latitude="23.845650" longitude="190.898438"/>
+<coordinates latitude="21.902278" longitude="180.351563"/>
+<coordinates latitude="21.902278" longitude="180.351563"/>
+<coordinates latitude="22.877440" longitude="170.859375"/>
+<coordinates latitude="22.877440" longitude="170.859375"/>
+<coordinates latitude="27.332735" longitude="160.312500"/>
+<coordinates latitude="27.332735" longitude="160.312500"/>
+<coordinates latitude="31.316101" longitude="143.437500"/>
+<coordinates latitude="31.316101" longitude="143.437500"/>
+<coordinates latitude="31.316101" longitude="129.375000"/>
+<coordinates latitude="31.316101" longitude="129.375000"/>
+<coordinates latitude="27.955591" longitude="112.500000"/>
+<coordinates latitude="27.955591" longitude="112.500000"/>
+<coordinates latitude="28.265682" longitude="100.898438"/>
+<coordinates latitude="28.265682" longitude="100.898438"/>
+<coordinates latitude="31.615966" longitude="92.109375"/>
+<coordinates latitude="31.615966" longitude="92.109375"/>
+<coordinates latitude="31.316101" longitude="80.859375"/>
+<coordinates latitude="31.316101" longitude="80.859375"/>
+<coordinates latitude="31.316101" longitude="80.507813"/>
+<coordinates latitude="31.316101" longitude="80.507813"/>
+<coordinates latitude="30.126124" longitude="73.652344"/>
+<coordinates latitude="30.126124" longitude="73.652344"/>
+<coordinates latitude="29.056170" longitude="65.742188"/>
+<coordinates latitude="29.056170" longitude="65.742188"/>
+<coordinates latitude="28.594169" longitude="53.261719"/>
+<coordinates latitude="28.594169" longitude="53.261719"/>
+<coordinates latitude="26.725987" longitude="43.769531"/>
+<coordinates latitude="26.725987" longitude="43.769531"/>
+<coordinates latitude="26.568877" longitude="34.277344"/>
+<coordinates latitude="26.568877" longitude="34.277344"/>
+<coordinates latitude="23.059516" longitude="25.312500"/>
+<coordinates latitude="23.059516" longitude="25.312500"/>
+<coordinates latitude="26.411551" longitude="18.808594"/>
+<coordinates latitude="26.411551" longitude="18.808594"/>
+<coordinates latitude="27.974998" longitude="7.558594"/>
+<coordinates latitude="27.974998" longitude="7.558594"/>
+<coordinates latitude="28.748397" longitude="2.285156"/>
+<coordinates latitude="28.748397" longitude="2.285156"/>
+<coordinates latitude="28.748397" longitude="-4.218750"/>
+<coordinates latitude="28.748397" longitude="-4.218750"/>
+<coordinates latitude="28.594169" longitude="-19.511719"/>
+<coordinates latitude="28.594169" longitude="-19.511719"/>
+<coordinates latitude="28.285033" longitude="-39.023438"/>
+<coordinates latitude="28.285033" longitude="-39.023438"/>
+<coordinates latitude="29.056170" longitude="-57.128906"/>
+<coordinates latitude="29.056170" longitude="-57.128906"/>
+<coordinates latitude="31.484893" longitude="-66.621094"/>
+<coordinates latitude="31.484893" longitude="-66.621094"/>
+<coordinates latitude="31.484893" longitude="-77.871094"/>
+<coordinates latitude="31.484893" longitude="-77.871094"/>
+<coordinates latitude="32.231390" longitude="-87.187500"/>
+<coordinates latitude="32.231390" longitude="-87.187500"/>
+<coordinates latitude="31.784217" longitude="-93.867188"/>
+<coordinates latitude="31.634676" longitude="-98.085938"/>
+<coordinates latitude="30.126124" longitude="-104.765625"/>
+<coordinates latitude="30.429730" longitude="-119.179688"/>
+<coordinates latitude="30.429730" longitude="-119.179688"/>
+<coordinates latitude="31.334871" longitude="-129.550781"/>
+<coordinates latitude="31.334871" longitude="-129.550781"/>
+<coordinates latitude="31.334871" longitude="-141.328125"/>
+<coordinates latitude="31.334871" longitude="-141.328125"/>
+<coordinates latitude="32.824211" longitude="-156.445313"/>
+<coordinates latitude="32.824211" longitude="-156.445313"/>
+</zone> -->
+  <!-- <zone name="Temperierte Zone süd">
+    <coordinates latitude="-71.088305" longitude="-151.171875"/>
+    <coordinates latitude="-71.088305" longitude="-151.171875"/>
+    <coordinates latitude="-68.672544" longitude="-126.562500"/>
+    <coordinates latitude="-68.672544" longitude="-126.562500"/>
+    <coordinates latitude="-65.385147" longitude="-107.929688"/>
+    <coordinates latitude="-65.385147" longitude="-107.929688"/>
+    <coordinates latitude="-63.568120" longitude="-80.156250"/>
+    <coordinates latitude="-63.568120" longitude="-80.156250"/>
+    <coordinates latitude="-60.951777" longitude="-61.523438"/>
+    <coordinates latitude="-60.951777" longitude="-61.523438"/>
+    <coordinates latitude="-60.951777" longitude="-35.156250"/>
+    <coordinates latitude="-60.951777" longitude="-35.156250"/>
+    <coordinates latitude="-65.531171" longitude="-14.414063"/>
+    <coordinates latitude="-65.531171" longitude="-14.414063"/>
+    <coordinates latitude="-60.086763" longitude="17.226563"/>
+    <coordinates latitude="-60.086763" longitude="17.226563"/>
+    <coordinates latitude="-56.968936" longitude="59.765625"/>
+    <coordinates latitude="-56.968936" longitude="59.765625"/>
+    <coordinates latitude="-57.160078" longitude="83.671875"/>
+    <coordinates latitude="-57.160078" longitude="83.671875"/>
+    <coordinates latitude="-59.017940" longitude="111.445313"/>
+    <coordinates latitude="-59.017940" longitude="111.445313"/>
+    <coordinates latitude="-55.998381" longitude="143.789063"/>
+    <coordinates latitude="-55.998381" longitude="143.789063"/>
+    <coordinates latitude="-60.608542" longitude="165.585938"/>
+    <coordinates latitude="-60.608542" longitude="165.585938"/>
+    <coordinates latitude="-63.253412" longitude="193.710938"/>
+    <coordinates latitude="-63.253412" longitude="193.710938"/>
+    <coordinates latitude="-61.122019" longitude="223.242188"/>
+    <coordinates latitude="-61.122019" longitude="223.242188"/>
+  <coordinates latitude="-30.836215" longitude="260.15625"/>
+  <coordinates latitude="-30.836215" longitude="260.15625"/>
+  <coordinates latitude="-28.545926" longitude="248.730469"/>
+  <coordinates latitude="-28.545926" longitude="248.730469"/>
+  <coordinates latitude="-27.926474" longitude="222.099609"/>
+  <coordinates latitude="-27.926474" longitude="222.099609"/>
+  <coordinates latitude="-25.977799" longitude="209.355469"/>
+  <coordinates latitude="-25.977799" longitude="209.355469"/>
+  <coordinates latitude="-27.547242" longitude="195.820313"/>
+  <coordinates latitude="-27.547242" longitude="195.820313"/>
+  <coordinates latitude="-27.235095" longitude="183.339844"/>
+  <coordinates latitude="-27.235095" longitude="183.339844"/>
+  <coordinates latitude="-27.098254" longitude="171.5625"/>
+  <coordinates latitude="-27.098254" longitude="170.507813"/>
+  <coordinates latitude="-27.098254" longitude="170.507813"/>
+  <coordinates latitude="-21.983801" longitude="159.257813"/>
+  <coordinates latitude="-21.983801" longitude="159.257813"/>
+  <coordinates latitude="-20.344627" longitude="142.734375"/>
+  <coordinates latitude="-20.344627" longitude="142.734375"/>
+  <coordinates latitude="-18.020528" longitude="130.78125"/>
+  <coordinates latitude="-18.020528" longitude="130.78125"/>
+  <coordinates latitude="-18.020528" longitude="122.695313"/>
+  <coordinates latitude="-18.020528" longitude="122.695313"/>
+  <coordinates latitude="-18.020528" longitude="109.335938"/>
+  <coordinates latitude="-18.020528" longitude="109.335938"/>
+  <coordinates latitude="-23.281719" longitude="90"/>
+  <coordinates latitude="-23.281719" longitude="90"/>
+  <coordinates latitude="-29.878755" longitude="78.046875"/>
+  <coordinates latitude="-29.878755" longitude="78.046875"/>
+  <coordinates latitude="-33.468108" longitude="62.929688"/>
+  <coordinates latitude="-33.468108" longitude="62.929688"/>
+  <coordinates latitude="-36.066862" longitude="46.40625"/>
+  <coordinates latitude="-36.066862" longitude="46.40625"/>
+  <coordinates latitude="-31.989442" longitude="30.585938"/>
+  <coordinates latitude="-31.989442" longitude="30.585938"/>
+  <coordinates latitude="-29.878755" longitude="18.984375"/>
+  <coordinates latitude="-29.878755" longitude="18.984375"/>
+  <coordinates latitude="-30.183122" longitude="8.4375"/>
+  <coordinates latitude="-30.183122" longitude="8.4375"/>
+  <coordinates latitude="-29.573457" longitude="-16.875"/>
+  <coordinates latitude="-29.573457" longitude="-16.875"/>
+  <coordinates latitude="-29.573457" longitude="-40.429688"/>
+  <coordinates latitude="-29.573457" longitude="-40.429688"/>
+  <coordinates latitude="-28.652031" longitude="-50.625"/>
+  <coordinates latitude="-28.652031" longitude="-50.625"/>
+  <coordinates latitude="-22.958393" longitude="-59.0625"/>
+  <coordinates latitude="-22.958393" longitude="-59.0625"/>
+  <coordinates latitude="-21.330315" longitude="-68.203125"/>
+  <coordinates latitude="-21.330315" longitude="-68.203125"/>
+  <coordinates latitude="-20.673905" longitude="-73.125"/>
+  <coordinates latitude="-20.673905" longitude="-73.125"/>
+  <coordinates latitude="-20.673905" longitude="-80.15625"/>
+  <coordinates latitude="-20.673905" longitude="-80.15625"/>
+  <coordinates latitude="-20.673905" longitude="-90"/>
+  <coordinates latitude="-20.673905" longitude="-90"/>
+  <coordinates latitude="-21.657428" longitude="-102.65625"/>
+  <coordinates latitude="-21.657428" longitude="-102.65625"/>
+  </zone> -->
+  <!-- <zone name="Polarzone süd">
+    <coordinates latitude="-61.122019" longitude="223.242188"/>
+    <coordinates latitude="-61.122019" longitude="223.242188"/>
+    <coordinates latitude="-63.253412" longitude="193.710938"/>
+    <coordinates latitude="-63.253412" longitude="193.710938"/>
+    <coordinates latitude="-60.608542" longitude="165.585938"/>
+    <coordinates latitude="-60.608542" longitude="165.585938"/>
+    <coordinates latitude="-55.998381" longitude="143.789063"/>
+    <coordinates latitude="-55.998381" longitude="143.789063"/>
+    <coordinates latitude="-59.01794" longitude="111.445313"/>
+    <coordinates latitude="-59.01794" longitude="111.445313"/>
+    <coordinates latitude="-57.160078" longitude="83.671875"/>
+    <coordinates latitude="-57.160078" longitude="83.671875"/>
+    <coordinates latitude="-56.968936" longitude="59.765625"/>
+    <coordinates latitude="-56.968936" longitude="59.765625"/>
+    <coordinates latitude="-60.086763" longitude="17.226563"/>
+    <coordinates latitude="-60.086763" longitude="17.226563"/>
+    <coordinates latitude="-65.531171" longitude="-14.414063"/>
+    <coordinates latitude="-65.531171" longitude="-14.414063"/>
+    <coordinates latitude="-60.951777" longitude="-35.15625"/>
+    <coordinates latitude="-60.951777" longitude="-35.15625"/>
+    <coordinates latitude="-60.951777" longitude="-61.523438"/>
+    <coordinates latitude="-60.951777" longitude="-61.523438"/>
+    <coordinates latitude="-63.56812" longitude="-80.15625"/>
+    <coordinates latitude="-63.56812" longitude="-80.15625"/>
+    <coordinates latitude="-65.385147" longitude="-107.929688"/>
+    <coordinates latitude="-65.385147" longitude="-107.929688"/>
+    <coordinates latitude="-68.672544" longitude="-126.5625"/>
+    <coordinates latitude="-68.672544" longitude="-126.5625"/>
+    <coordinates latitude="-71.088305" longitude="-151.171875"/>
+    <coordinates latitude="-71.088305" longitude="-151.171875"/>
+    <coordinates latitude="-90.0" longitude="-180.0"/>
+    <coordinates latitude="-90.0" longitude="180.0"/>
+  </zone> -->
 </geodata>
