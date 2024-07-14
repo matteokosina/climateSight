@@ -14,7 +14,6 @@ html, body {
 }
 
 #logo{
-
     height: 60px;
     width: auto;
     margin-left: 50px;
@@ -23,8 +22,8 @@ html, body {
 
 #footer-logo{
     display: block;
-    width: 60px;
-    margin-top: 30px;
+    width: 40px;
+    margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -62,6 +61,7 @@ a{
 
 footer {
     position: fixed;
+    height: 100px;
     left: 0;
     bottom: 0;
     margin-top: 100px;
@@ -83,14 +83,14 @@ footer {
     font-size: large;
     width: 20%;
     margin-left: 20px;
-    margin-top: 5%;
+    margin-top: 1%;
 }
 .content{
     display: flex;
     flex-wrap: wrap;
 }
 h1{
-    font-size: 300%;
+    font-size: 150%;
     font-weight: bolder;
     width: 100%;
     margin-left: 20px;
@@ -119,11 +119,14 @@ h2{
 }
 #showZones{
     width: fit-content;
+    display: block;
     background-color: rgb(66, 184, 66);
     border-radius: 5px;
     padding: 5px;
     margin-top: 10px;
     margin-left: 20px;
+
+
 }
 .main-info{
     width: 40%;
