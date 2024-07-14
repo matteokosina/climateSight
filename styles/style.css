@@ -130,6 +130,7 @@ h2{
     font-size: large;
     margin-left: 5%;
     margin-top: 5%;
+    padding-bottom: 300px;
 }
 
 
@@ -138,6 +139,62 @@ h2{
     right: 0px;
     width: 70%;
 }
+#output{
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 400px;
+}
+
+/* Tabelle allgemein */
+table {
+    width: 80%;
+    border-radius: 20px;
+    border: 1px solid white;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.162);
+  }
+  
+  /* Tabellenkopf */
+  thead {
+    background-color: #f2f2f2;
+  }
+  
+  thead th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  /* Tabellenzeilen */
+  tbody tr {
+    transition: background-color 0.3s ease;
+  }
+  
+  tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  tbody td {
+    padding: 10px 15px;
+    text-align: left;
+  }
+  
+  /* Alternierende Zeilenfarbe */
+  tbody tr:nth-child(even) {
+    background-color: #51a96f2d;
+  }
+  
+  /* Zelleninhalt Ausrichtung */
+  td {
+    text-align: left;
+  }
+  
 
 
 @media only screen and (max-width: 600px) {

@@ -61,7 +61,7 @@ async function transformXML() {
     try {
         const xmlString = generateXMLData();
         const xmlDoc = await loadXMLStringAsDocument(xmlString);
-        const xslDoc = await loadXSLTFile('../transformations/analytics.xsl');
+        const xslDoc = await loadXSLTFile('../transformations/analytics-data.xsl');
 
         const outputElement = document.getElementById("output");
 
