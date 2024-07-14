@@ -1,7 +1,8 @@
 
 // cookie check
 if (!cookiesAccepted() && location.pathname != "/index.html") {
-    location.assign("http://" + location.host + "/index.html");
+    console.log(location.host);
+    location.assign("http://" + location.host + "/climateSight/index.html");
 }
 function cookiesAccepted() {
     return (localStorage.getItem("cookieSeen") == "shown");
