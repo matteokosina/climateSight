@@ -143,7 +143,7 @@
     <!-- Template for generating Y-axis units -->
     <xsl:template match="point" mode="y-units">
         <text x="37" y="{405 - @y}" text-anchor="end" font-size="10" fill="black">
-            <xsl:value-of select="@y" />
+            <xsl:value-of select="@value" />
         </text>
     </xsl:template>
 
