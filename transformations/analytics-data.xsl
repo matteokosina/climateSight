@@ -27,7 +27,7 @@
 
     <!-- Template for facts -->
     <xsl:template match="facts">
-        <h2>ClimateSight Analytics</h2>
+        <h2><xsl:value-of select="country"/> - Analytics</h2>
         <table>
             <tr>
                 <th>Hauptstadt</th>

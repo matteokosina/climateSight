@@ -3,7 +3,17 @@
 document.addEventListener('DOMContentLoaded', function () {
     transformXML();
 });
- 
+
+function printPage() {
+    window.print();
+}
+function setupActionListener() {
+    const link = document.getElementById("print");
+    if (link) {
+        link.addEventListener("click", printPage);
+    }
+}
+
 async function loadFile(url) {
     const response = await fetch(url);
     if (!response.ok) {
@@ -33,6 +43,7 @@ async function transformXML() {
 
             outputElement.innerHTML = '';  // Clear previous content
             outputElement.appendChild(resultDocument);
+            setupActionListener();
         } else {
             throw new Error("Your browser does not support XSLT transformations");
         }

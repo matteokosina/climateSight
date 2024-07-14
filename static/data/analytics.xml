@@ -5,7 +5,7 @@
             <logo src= "../static/assets/logo.png" alt="ClimateSight" name="ClimateSight" ref="../index.html"/>
             <link ref="../about/about.html">About</link>
         </navbar>
-        <heading>Analytics</heading>
+        <print>Seite drucken</print>
        <footer>
             <logo src= "../static/assets/logo-bw.png" alt="ClimateSight" name="ClimateSight" ref="../index.html"/>
             <copyright>© ClimateSight 2024. All Rights Reserved. | <imprint ref="../imprint/imprint.html"> Imprint</imprint></copyright>

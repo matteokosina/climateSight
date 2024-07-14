@@ -17,11 +17,7 @@
                     </div>
                 </nav>
                 <h1><xsl:value-of select="heading"/></h1>
-               
-                
-
-            
-
+                <div id="print"><a href="#" ><xsl:value-of select="print"/></a></div>
                 <footer>
                     <a href="{footer/logo/@ref}">
                         <img id="footer-logo" src="{footer/logo/@src}" alt="{footer/logo/@alt}" />
