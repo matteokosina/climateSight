@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+    <de>
+        <navbar>
+            <logo src= "../static/assets/logo.png" alt="ClimateSight" name="ClimateSight" ref="../index.html"/>
+            <link ref="../about/about.html">About</link>
+        </navbar>
+        <heading>Impressum, Angaben gemäß § 5 TMG:</heading>
+        <subheading>Leon Fertig, Matteo Kosina</subheading>
+        <content>
+        <line> Postanschrift: Erzbergerstraße 121, 76133 Karlsruhe</line>
+        <line> E-Mail: mail [at] gmail.com</line>
+        <line> Vertreten durch: Leon Fertig, Matteo Kosina</line>
+        <line>Disclaimer zu externen Links und APIs:</line>
+        <line>Unser Angebot umfasst Links zu externen Webseiten Dritter sowie die Nutzung von externen APIs (Application Programming Interface), deren Inhalte außerhalb unserer Kontrolle liegen. Aus diesem Grund übernehmen wir keine Garantie für die Inhalte dieser externen Quellen. Die Verantwortung für diese Inhalte liegt ausschließlich bei den jeweiligen Anbietern oder Betreibern der Seiten. Zum Zeitpunkt der Erstellung von ClimateSight wurden die verlinkten Seiten und APIs auf mögliche rechtliche Verstöße geprüft und es wurden keine rechtswidrigen Inhalte festgestellt. Eine fortlaufende inhaltliche Überwachung der verlinkten Seiten und APIs ist jedoch ohne konkrete Hinweise auf Rechtsverstöße unzumutbar. Sollten uns Rechtsverletzungen bekannt werden, entfernen wir entsprechende externe Inhalte umgehend.</line>
+        <line>"Hiermit distanzieren wir uns ausdrücklich von allen Inhalten aller von unserer Homepage gelinkten Seiten. Diese Erklärung gilt für alle auf unsere Website angebrachten Links."</line>
+        <line>Die Klima- und Wetterdaten werden von openmeteo.com bezogen:</line>
+        <line>Zippenfenig, P. (2023). Open-Meteo.com Weather API [Computer software]. Zenodo. https://doi.org/10.5281/ZENODO.7970649</line>
+        </content>
+        <footer>
+            <logo src= "../static/assets/logo-bw.png" alt="ClimateSight" name="ClimateSight" ref="../index.html"/>
+            <copyright>© ClimateSight 2024. All Rights Reserved. | <imprint ref="#"> Imprint</imprint></copyright>
+        </footer>
+    </de>
+</translations>

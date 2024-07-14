@@ -3,7 +3,7 @@
     <de>
         <navbar>
             <logo src= "./static/assets/logo.png" alt="ClimateSight" name="ClimateSight" ref="#"/>
-            <link ref="#">About</link>
+            <link ref="./about/about.html">About</link>
         </navbar>
         <heading>Willkommen bei ClimateSight</heading>
         <subheading>Was ist unser Ziel?</subheading>
@@ -36,7 +36,7 @@
         </cookies>
         <footer>
             <logo src= "./static/assets/logo-bw.png" alt="ClimateSight" name="ClimateSight" ref="#"/>
-            <copyright>© ClimateSight 2024. All Rights Reserved. | <imprint ref="#"> Imprint</imprint></copyright>
+            <copyright>© ClimateSight 2024. All Rights Reserved. | <imprint ref="./imprint/imprint.html"> Imprint</imprint></copyright>
         </footer>
     </de>
 </translations>

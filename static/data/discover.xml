@@ -3,7 +3,7 @@
     <de>
         <navbar>
             <logo src= "../static/assets/logo.png" alt="ClimateSight" name="ClimateSight" ref="../index.html"/>
-            <link ref="#">About</link>
+            <link ref="../about/about.html">About</link>
         </navbar>
         <heading>Klima-Zonen</heading>
         <subheading>Was versteht man darunter?</subheading>
@@ -15,8 +15,8 @@
     
        
         <footer>
-            <logo src= "../static/assets/logo-bw.png" alt="ClimateSight" name="ClimateSight" ref="#"/>
-            <copyright>© ClimateSight 2024. All Rights Reserved. | <imprint ref="#"> Imprint</imprint></copyright>
+            <logo src= "../static/assets/logo-bw.png" alt="ClimateSight" name="ClimateSight" ref="../index.html"/>
+            <copyright>© ClimateSight 2024. All Rights Reserved. | <imprint ref="../imprint/imprint.html"> Imprint</imprint></copyright>
         </footer>
     </de>
 </translations>

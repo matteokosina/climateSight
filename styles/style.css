@@ -93,6 +93,7 @@ h1{
     font-size: 300%;
     font-weight: bolder;
     width: 100%;
+    margin-left: 20px;
 }
 h2{
     display: block;
@@ -100,6 +101,10 @@ h2{
     margin-top: 10px;
     font-size: x-large;
     font-weight: bold;
+}
+#about{
+    width: 60%;
+    font-size: larger;
 }
 
 .launch{
@@ -136,6 +141,9 @@ h2{
 
 
 @media only screen and (max-width: 600px) {
+    #globe{
+        display: none;
+    }
     #main-content {
         max-width: 90%;
         margin-left: auto;
