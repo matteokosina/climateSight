@@ -95,7 +95,7 @@ function jsonToXML(data) {
     xml += '\n<values>\n';
     for (let i = 0; i < precipition_values.length; i++) {
        
-        xml += '<point tag="' + year_list[i] + '" x="' + (i*35) + '" y="' + precipition_coords[i] + '" value="' + Math.round(precipition_values[i]*100)/100.0 + '" />\n';
+        xml += '<point tag="' + year_list[i] + '" x="' + (i*30) + '" y="' + precipition_coords[i] + '" value="' + Math.round(precipition_values[i]*100)/100.0 + '" />\n';
         
     }
     xml += '</values>\n';
@@ -105,7 +105,7 @@ function jsonToXML(data) {
     xml += '\n<values>\n';
     for (let i = 0; i < temperature_values.length; i++) {
        
-        xml += '<point tag="' + year_list[i] + '" x="' + (i*35) + '" y="' + temperature_coords[i] + '" value="' + Math.round(temperature_values[i]*100)/100.0 + '" />\n';
+        xml += '<point tag="' + year_list[i] + '" x="' + (i*30) + '" y="' + temperature_coords[i] + '" value="' + Math.round(temperature_values[i]*100)/100.0 + '" />\n';
         
     }
     xml += '</values>\n';
@@ -115,7 +115,7 @@ function jsonToXML(data) {
     xml += '\n<values>\n';
     for (let i = 0; i < snowfall_values.length; i++) {
        
-        xml += '<point tag="' + year_list[i] + '" x="' + (i*35) + '" y="' + snowfall_coords[i] + '" value="' + Math.round(snowfall_values[i]*100)/100.0 + '" />\n';
+        xml += '<point tag="' + year_list[i] + '" x="' + (i*30) + '" y="' + snowfall_coords[i] + '" value="' + Math.round(snowfall_values[i]*100)/100.0 + '" />\n';
         
     }
     xml += '</values>\n';

@@ -41,14 +41,16 @@
             
     </xsl:template>
 
-       <xsl:template match="content">
-        <div>
-            <xsl:for-each select="line">
-                <xsl:value-of select="normalize-space(.)" />
-                <br />
-                <br />
-            </xsl:for-each>
-        </div>
-    </xsl:template>
+      <xsl:template match="content">
+    <div>
+        <xsl:apply-templates select="line"/>
+    </div>
+</xsl:template>
+
+<xsl:template match="line">
+    <xsl:value-of select="normalize-space(.)" />
+    <br />
+    <br />
+</xsl:template>
 
 </xsl:stylesheet>

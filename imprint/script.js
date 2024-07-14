@@ -33,7 +33,6 @@ async function transformXML() {
 
             outputElement.innerHTML = '';  // Clear previous content
             outputElement.appendChild(resultDocument);
-            showCookieBanner()
         } else {
             throw new Error("Your browser does not support XSLT transformations");
         }

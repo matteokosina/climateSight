@@ -29,7 +29,7 @@
             Sie sind unter 16 Jahre alt? Leider dürfen Sie diesem Service nicht selbst zustimmen, um diese Inhalte zu sehen. Bitten Sie Ihre Eltern oder Erziehungsberechtigten, dem Service mit Ihnen zuzustimmen!
             Wenn Sie die Services akzeptieren, erlauben Sie, dass Cookies geladen werden. Außerdem werden die Cookies auf der Grundlage eines berechtigten Interesses geladen.
             </text>
-            <link ref="../imprint/imprint.html">Weitere Informationen &#8599;</link>
+            <link ref="./imprint/imprint.html">Weitere Informationen &#8599;</link>
             <accept>Akzeptieren und weiter</accept>
 
         </cookies>
