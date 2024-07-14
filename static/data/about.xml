@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+    <de>
+        <navbar>
+            <logo src= "../static/assets/logo.png" alt="ClimateSight" name="ClimateSight" ref="../index.html"/>
+            <link ref="#">About</link>
+        </navbar>
+        <heading>ClimateSight</heading>
+        <subheading>About us</subheading>
+        <content>
+Wir sind eine Gruppe von Studierenden, die im Rahmen der Vorlesung Webengineering dieses Projekt entwickelt haben. Unser gemeinsames Ziel ist es, die Auswirkungen des Klimawandels anschaulich darzustellen und das Bewusstsein für dieses drängende globale Problem zu schärfen. Durch unsere Website möchten wir umfassend informieren und visualisieren, wie der Klimawandel verschiedene Aspekte unseres Lebens und der Umwelt beeinflusst. Wir hoffen, damit einen Beitrag zur Aufklärung zu leisten und das Verständnis für die Notwendigkeit von Klimaschutzmaßnahmen zu fördern. Unser Projekt ist das Ergebnis intensiver Teamarbeit, Forschung und der Anwendung von Webtechnologien, um eine benutzerfreundliche und informative Plattform zu schaffen.        </content>
+        <footer>
+            <logo src= "../static/assets/logo-bw.png" alt="ClimateSight" name="ClimateSight" ref="../index.html"/>
+            <copyright>© ClimateSight 2024. All Rights Reserved. | <imprint ref="../imprint/imprint.html"> Imprint</imprint></copyright>
+        </footer>
+    </de>
+</translations>

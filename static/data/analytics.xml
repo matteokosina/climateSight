@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+    <de>
+        <navbar>
+            <logo src= "../static/assets/logo.png" alt="ClimateSight" name="ClimateSight" ref="../index.html"/>
+            <link ref="#">About</link>
+        </navbar>
+        <heading>Analytics</heading>
+       <footer>
+            <logo src= "../static/assets/logo-bw.png" alt="ClimateSight" name="ClimateSight" ref="../index.html"/>
+            <copyright>© ClimateSight 2024. All Rights Reserved. | <imprint ref="../imprint/imprint.html"> Imprint</imprint></copyright>
+        </footer>
+    </de>
+</translations>

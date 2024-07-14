@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+    <de>
+        <navbar>
+            <logo src= "../static/assets/logo.png" alt="ClimateSight" name="ClimateSight" ref="../index.html"/>
+            <link ref="../about/about.html">About</link>
+        </navbar>
+        <heading>Klima-Zonen</heading>
+        <subheading>Was versteht man darunter?</subheading>
+        <text>
+        Klimazonen sind geografische Bereiche mit ähnlichen Klimabedingungen wie Temperatur und Niederschlag. Es gibt fünf Hauptklimazonen: tropische, trockene, gemäßigte, kalte und polare Zonen. Diese Zonen sind wichtig für das Verständnis globaler Wetter- und Klimamuster, die Landwirtschaft, Wasserressourcen und die Anpassung an den Klimawandel. 
+        Mit einem Klick auf "Zonen einzeichnen" können Sie sich die Zonen in der Karte anzeigen lassen. Wenn Sie auf ein Ort in der Karte klicken, werden sie zur entsprechenden Klimaauswertung weitergeleitet.
+        </text>
+        <launch>Zonen einzeichnen</launch>
+    
+       
+        <footer>
+            <logo src= "../static/assets/logo-bw.png" alt="ClimateSight" name="ClimateSight" ref="../index.html"/>
+            <copyright>© ClimateSight 2024. All Rights Reserved. | <imprint ref="../imprint/imprint.html"> Imprint</imprint></copyright>
+        </footer>
+    </de>
+</translations>

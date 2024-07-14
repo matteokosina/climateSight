@@ -1,0 +1,269 @@
+html, body {
+    margin:0px;
+    font-family: sans-serif;
+    height: 100%;
+    
+    margin: 0;
+    padding: 0;
+}
+.nav-wrapper{
+    background-color: #212121;
+    height: 60px;
+    width: 100%;
+    box-shadow: 0 0 10px 0 rgba(33, 33, 33, 0.53);
+}
+
+#logo{
+
+    height: 60px;
+    width: auto;
+    margin-left: 50px;
+    float: left;
+}
+
+#footer-logo{
+    display: block;
+    width: 60px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.company-name{
+    color: white;
+    display: inline-block;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    font-size: larger;
+}
+
+ul{
+    display: inline-block;
+    float: right;
+    margin-right: 50px;
+}
+li{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+a:hover{
+    color: grey;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin-top: 100px;
+    background-color: #212121;
+    color: white;
+    width: 97.5%;
+    text-align: center;
+    padding: 25px;
+    z-index: 1;
+}
+.main{
+    margin-top: 50px;
+    display: inline-flex;
+}
+#globe{
+    margin-top: 5%;
+}
+#info{
+    font-size: large;
+    width: 20%;
+    margin-left: 20px;
+    margin-top: 5%;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+}
+h1{
+    font-size: 300%;
+    font-weight: bolder;
+    width: 100%;
+    margin-left: 20px;
+}
+h2{
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: x-large;
+    font-weight: bold;
+}
+#about{
+    width: 60%;
+    font-size: larger;
+}
+
+.launch{
+    background-color: green;
+    padding:7px;
+    border-radius: 7px;
+    display: block;
+    width: fit-content;
+    margin-left: 50px;
+    margin-right: auto;
+    margin-top: 10px;
+}
+#showZones{
+    width: fit-content;
+    background-color: rgb(66, 184, 66);
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.main-info{
+    width: 40%;
+    font-size: large;
+    margin-left: 5%;
+    margin-top: 5%;
+    padding-bottom: 300px;
+}
+
+
+#map{
+    top: 60px;
+    right: 0px;
+    width: 70%;
+}
+#output{
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 400px;
+}
+
+/* Tabelle allgemein */
+table {
+    width: 80%;
+    border-radius: 20px;
+    border: 1px solid white;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.162);
+  }
+  
+  /* Tabellenkopf */
+  thead {
+    background-color: #f2f2f2;
+  }
+  
+  thead th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  /* Tabellenzeilen */
+  tbody tr {
+    transition: background-color 0.3s ease;
+  }
+  
+  tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  tbody td {
+    padding: 10px 15px;
+    text-align: left;
+  }
+  
+  /* Alternierende Zeilenfarbe */
+  tbody tr:nth-child(even) {
+    background-color: #51a96f2d;
+  }
+  
+  /* Zelleninhalt Ausrichtung */
+  td {
+    text-align: left;
+  }
+  
+
+
+@media only screen and (max-width: 600px) {
+    #globe{
+        display: none;
+    }
+    #main-content {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .globe-container{
+        display: none;
+    }
+    #footer-logo{
+        display: none;
+    }
+    .company-name{
+        display: none;
+    }
+    footer{
+        position: relative;
+        font-size: small;
+        width: 90%;
+    }
+    ul{
+        margin-top: 20px;
+    }
+    h1{
+        text-align: center;
+    }
+}
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    height: 55%;
+    padding: 5px 14px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 20px  20px 0 0;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.082);
+    color: white;
+    z-index: 2;
+}
+img{
+    width: 10%;
+    min-width: 80px;
+}
+
+#close {
+    font-size: 100%;
+    padding: 10px;
+    background-color: #777;
+    border-style: none;
+    margin-right: 50px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.close:hover{
+    background-color: green;
+}
+
+#cookie-info{
+    text-decoration: underline;
+}
