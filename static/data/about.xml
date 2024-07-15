@@ -4,7 +4,6 @@
     <de>
         <navbar>
             <logo src= "../static/assets/logo.png" alt="ClimateSight" name="ClimateSight" ref="../index.html"/>
-            <link ref="#">About</link>
         </navbar>
         <heading>ClimateSight</heading>
         <subheading>About us</subheading>
