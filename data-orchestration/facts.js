@@ -45,7 +45,7 @@ function jsonToXML(data) {
     
     // alt Text für die Flagge          
     xmlResult += "\n<altFlag>" + data.flags.alt + "</altFlag>";
-    xmlResult += "\n<population>" + data.population + "</population>";
+    xmlResult += "\n<population>" + ((data.population < 1000) ? (data.population  + " Mio") : data.population )+ "</population>";
     xmlResult += "\n</facts>\n"
     return xmlResult
 }
