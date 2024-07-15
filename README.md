@@ -5,12 +5,12 @@
 # ClimateSight
 
 > Mit diesem Projekt wollen wir eine Möglichkeit schaffen, die Auswirkungen des Klimawandels auf eine neue, interaktive Art und Weise sichtbar zu machen.
-> ClimateSight ist als Kartenanwendung gedacht und ermöglicht etwas über Klimazonen zu lernen, sowie auf ein beliebigen Ort auf der Welt zu klicken um historische Wetterdaten zu betrachten.
+> ClimateSight ist als Kartenanwendung gedacht und ermöglicht, etwas über Klimazonen zu lernen sowie auf ein beliebigen Ort auf der Welt zu klicken, um historische Wetterdaten zu betrachten.
 >
-> Eine Live-Demo der Website findet sich [hier](https://matteokosina.github.io/climateSight/) .
-> Die Anwendung ist für Nutzung an Desktop-Geräten ausgelgt und ist daher für dieses Bildschirmformat optimiert.
+> Eine Live-Demo der Website findet sich [hier](https://matteokosina.github.io/climateSight/).
+> Die Anwendung ist für die Nutzung an Desktop-Geräten ausgelgt und daher für dieses Bildschirmformat optimiert.
 >
-> Neben der Live-Demo ist es auch möglich ClimateSight lokal zu betreiben. Eine [Installationsanleitung](https://github.com/matteokosina/climateSight/edit/main/README.md#lokale-installation) findet sich ebenfalls in diesem README.
+> Neben der Live-Demo ist es auch möglich, ClimateSight lokal zu betreiben. Eine [Installationsanleitung](https://github.com/matteokosina/climateSight/edit/main/README.md#lokale-installation) findet sich ebenfalls in diesem README.
 
 
 
@@ -28,39 +28,39 @@
 
 
 ## Umsetzung
-Folgende Technologien wurden für die Realisierung  des Projektes angewandt.
+Folgende Technologien wurden für die Realisierung des Projektes angewandt.
 
 ### XML
 
-Als Datenhaltungsformat dient stets eine XML-Struktur. Diese sind entweder statisch unter dem Pfad `./static/data/` zu finden oder werden dynamisch erzeugt.
+Als Datenhaltungsformat dient eine XML-Struktur. Diese sind entweder statisch unter dem Pfad `./static/data/` zu finden oder werden dynamisch erzeugt.
 Da die von uns gewählten APIs zur Wetterdatenbereitstellung ausschließlich JSON-Formate unterstützen, haben wir mittels Javascript eine Konvertierung zu XML durchgeführt.
-Dabei findet das konsumieren jeder API in einer eigenen Javascript Datei statt, die die Daten in XML-Format zurückgibt. Der `Orchestrator` (orchestrator.js) ist dafür zuständig alle Daten zusammenzuführen und ein gesamtheitliches, wohlgeformtes XML Dokument zu erstellen. Der Gedanke dahinter war, das Projekt somit modular aufzubauen und zukünftige Datenerweiterungen zu vereinfachen.
-Des weiteren ist für jede statische aber auch für das dynamisch erzeugte XML Dokument eine DTD erzeugt worden, somit ist ferne nicht nur die Wohlgeformtheit, sondern auch die Gültigkeit gegeben.
+Dabei findet das Abrufen jeder API in einer eigenen Javascript Datei statt, die die Daten in XML-Format zurückgibt. Der `Orchestrator` (orchestrator.js) ist dafür zuständig, alle Daten zusammenzuführen und ein gesamtheitliches, wohlgeformtes XML Dokument zu erstellen. Der Gedanke dahinter war, das Projekt modular aufzubauen und zukünftige Datenerweiterungen zu vereinfachen.
+Des Weiteren ist für jede statische aber auch für das dynamisch erzeugte XML-Dokument eine DTD erzeugt worden, somit ist nicht nur die Wohlgeformtheit, sondern auch die Gültigkeit gegeben.
 
 ### XSLT
 
-Zur Transformation zu einem im Browser darstellbaren Format haben wir XSLT genutzt. Dieses wird client-seitig verarbeitet.
-Für jede Seite wird hierfür Javascript genutzt, um XML Daten mithilfe einer XSL Datei zu transformieren und in ein bereits vorhandenes HTML div zu rendern.
-Bei den HTML Dokumenten handelt es sich nur um Grundgerüste, die ausschließlich ein HTML div enthalten in welches der komplette anzuzeigende Inhalt transformiert wird.
+Zur Transformation in ein im Browser darstellbares Format haben wir XSLT genutzt. Dieses wird client-seitig verarbeitet.
+Für jede Seite wird hierfür Javascript genutzt, um XML Daten mithilfe einer XSL-Datei zu transformieren und in einen bereits vorhandenen HTML div-Element zu rendern.
+Bei den HTML-Dokumenten handelt es sich nur um Grundgerüste, die ausschließlich ein div-Element enthalten, in welches der komplette anzuzeigende Inhalt transformiert wird.
 
 ### Karte
 
-Für die Umsetzung der Karte, haben wir auf die Bibliothek Leaflet (siehe [hier](https://leafletjs.com/)) und OpenStreetMap (siehe [hier](https://www.openstreetmap.org/about))zurückgegriffen. Diese ermöglicht das laden einr KML (Keyhole Markup Language) Datei um Markierungen vorzunehmen.
+Für die Umsetzung der Karte haben wir auf die Bibliothek [Leaflet](https://leafletjs.com/) und [OpenStreetMap](https://www.openstreetmap.org/about) zurückgegriffen. Diese ermöglicht das laden einr KML-Datei (Keyhole Markup Language), um Markierungen vorzunehmen.
 Diese KML Datei wird wiederum mit XSLT auf Basis einer XML Datei erzeugt.
-Des weiteren ist es möglich auf einen beliebigen Punkt auf der Karte zu klicken um auf eine Analytik-Seite zu gelangen die historische und aktuelle Wetterdaten sowie allgemeine Informationen zu dem Ort an diesen Koordinaten bereithält.
+Des Weiteren ist es möglich, auf einen beliebigen Punkt auf der Karte zu klicken, um auf eine Analytik-Seite zu gelangen, die historische und aktuelle Wetterdaten sowie allgemeine Informationen zu dem Ort an diesen Koordinaten bereitstellt.
 
 
 ### Daten
 
-Die Daten beziehen wir von zwei unterschiedlichen API-Anbietern diese sind:
+Die Daten beziehen wir von zwei unterschiedlichen API-Anbietern:
 - OpenMeteo (siehe [hier](https://open-meteo.com))
 - RestCountries (siehe [hier](https://restcountries.com))
 
-Diese APIs kamen für uns in Frage, da sie zum einen die für uns nötigen Daten bereitstellen und des weiteren kostenfrei zu nutzen sind. Da OpenMeteo ein Rate-Limit von 10.000 API-Aufrufen pro Tag erlaubt ist dies für unseren Anwendungsfall ausreichend.
+Diese APIs kamen für uns in Frage, da sie die nötigen Daten bereitstellen und kostenfrei zu nutzen sind. OpenMeteo hat ein Rate-Limit von 10.000 API-Aufrufen pro Tag, ist aber für unseren Anwendungsfall ausreichend.
 
 ### SVG
 
-Zur Darstellung der zeitlichen Entwicklung der Daten, haben erzeugen wir unsere eigenen SVG Liniendiagramme mittels XSLT. Dabei werden die Datenreihen sogar so skaliert, dass sie darstellbar sind egal wie die Datenreihen ausfallen. Die Daten des Liniendiagramms liegen einer XML Datei zugrunde, in welcher man neben der x- und y-Werten der Datenpunkte auch die Achsenbeschriftung und die Farbe der Linie definieren kann.
+Zur Darstellung der zeitlichen Entwicklung der Daten erzeugen wir unsere eigenen SVG-Liniendiagramme mittels XSLT. Die Daten des Liniendiagramms liegen einer XML-Datei bereit, in der man neben der x- und y-Werten der Datenpunkte auch die Achsenbeschriftung und die Farbe der Linie definieren kann.
 
 ### Struktur
 
@@ -130,19 +130,19 @@ climatesight/
 
 ## Features
 
-Folgende Features umfasst die ClimateSight
+Folgende Features umfasst ClimateSight:
 + interaktive Karte
-+ Möglichkeit die Klimazonen in der Karte einzeichnenzulassen
++ Möglichkeit, die Klimazonen in der Karte einzeichnenzulassen
 + mit dem Klick auf ein Land wird man zur Analytik Seite weitergeleitet, die Daten zum geklickten Punkt darstellt
-+ graphische Darstellung der Daten in Form von dynamisch generierten SVG Liniendiagrammen
++ graphische Darstellung der Daten in Form von dynamisch generierten SVG-Liniendiagrammen
 + Bereitstellung historischer und aktueller Wetter-/ und Klimadaten, sowie Informationen wie die Hauptstadt, Population und Flagge des ausgewählten Standortes
 + Möglichkeit die Analytik Seite auszudrucken ( hierfür werden bestimmte Teile der Seite ausgeblendet)
 + About- und Impressum Seite
-+ Beachtung von Cookie Regulierungen ( Nutzer muss Cookies akzeptieren, bevor Daten von externen Quellen geladen werden. Will man eine Unterseite erreichen ohne zuvor den Cookies zugestimmt zu haben, wird man auf die Startseite weitergeleitet)
++ Beachtung von Cookie-Regulierungen (Nutzer muss Cookies akzeptieren, bevor Daten von externen Quellen geladen werden. Will man eine Unterseite erreichen, ohne zuvor den Cookies zugestimmt zu haben, wird man auf die Startseite weitergeleitet)
 
 ## lokale Installation
 
-Für die lokale Inbetriebnahme genügt es, den im Projekt enthaltenen Python Webserver zu starten mit dem Befehl:
+Für die lokale Inbetriebnahme genügt es, den im Projekt enthaltenen Python-Webserver mit folgendem Befehl zu starten:
 
 ```
 python webserver.py
@@ -154,11 +154,11 @@ bzw.
 python3 webserver.py
 ```
 
-Alternativ lässt sich auch jeder andere Webserver (z.B. Apache) nutzen, solange diser die Grundfunktionen unterstützt (HTML, Javascript, XSLT).
+Alternativ lässt sich auch jeder andere Webserver (z.B. Apache) nutzen, solange dieser die Grundfunktionen unterstützt (HTML, Javascript, XSLT).
 
 ## Browser Unterstützung
 
-Die Website wurde für gängige Webbrowser getestet (Chrome, Firefox und Safari) und war auf allen funktionsfähig. Lediglich bei Firefox wurden die SVG Liniendiagramme eingeschränkt dargestellt, jedoch noch in einem Rahmen, der die Verständlichkeit derer nicht drastisch beeinflusst.
+Die Website wurde für gängige Webbrowser getestet (Chrome, Firefox und Safari) und war auf allen funktionsfähig. Lediglich bei Firefox wurden die SVG-Liniendiagramme eingeschränkt dargestellt, jedoch noch in einem Rahmen, der die Verständlichkeit der dargestellten Daten nicht drastisch beeinflusst.
 
 ## Contributor
 
