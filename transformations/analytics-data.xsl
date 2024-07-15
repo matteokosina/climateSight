@@ -126,9 +126,9 @@
         <table>
             <tr>
                 <th>Jahr</th>
-                <th>Durchschnittlicher Niederschlag pro m²</th>
-                <th>Durchschnittlichs Temperatur</th>
-                <th>Durchschnittliche Schneefall pro m²</th>
+                <th>Jahresniederschlag pro m²</th>
+                <th>Durchschnittliche Temperatur</th>
+                <th>Durchschnittlicher Schneefall pro m²</th>
             </tr>
             <xsl:apply-templates select="year"/>
         </table>

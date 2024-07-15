@@ -110,7 +110,7 @@ function jsonToXML(data) {
 
 
     // XML-Struktur fuer den Niederschlag
-    xml += '<chart xvalue="Jahr der Messung" yvalue="Niederschlag pro m²" color="blue">\n<title>Sample Line Chart</title>';
+    xml += '<chart xvalue="Jahr der Messung" yvalue="Jahresniederschlag pro m²" color="blue">\n<title>Sample Line Chart</title>';
         xml += '\n<values>\n';
         for (let i = 0; i < precipition_values.length; i++) {
             xml += '<point tag="' + year_list[i] + '" x="' + (i * 30) + '" y="' + precipition_coords[i] + '" value="' + Math.round(precipition_values[i] * 100) / 100.0 + '" />\n';
@@ -119,7 +119,7 @@ function jsonToXML(data) {
     xml += '</chart>\n';
 
     // XML-Struktur fuer die Temperatur
-    xml += '<chart xvalue="Jahr der Messung" yvalue="Temperatur in °C" color="blue">\n<title>Sample Line Chart</title>';
+    xml += '<chart xvalue="Jahr der Messung" yvalue="Durchschnittliche Temperatur in °C" color="blue">\n<title>Sample Line Chart</title>';
         xml += '\n<values>\n';
         for (let i = 0; i < temperature_values.length; i++) {
             xml += '<point tag="' + year_list[i] + '" x="' + (i * 30) + '" y="' + temperature_coords[i] + '" value="' + Math.round(temperature_values[i] * 100) / 100.0 + '" />\n';
@@ -128,7 +128,7 @@ function jsonToXML(data) {
     xml += '</chart>\n';
 
     // XML-Struktur fuer den Schneefall
-    xml += '<chart xvalue="Jahr der Messung" yvalue="Schneeall pro m²" color="blue">\n<title>Sample Line Chart</title>';
+    xml += '<chart xvalue="Jahr der Messung" yvalue="Schneefall pro m²" color="blue">\n<title>Sample Line Chart</title>';
         xml += '\n<values>\n';
         for (let i = 0; i < snowfall_values.length; i++) {
             xml += '<point tag="' + year_list[i] + '" x="' + (i * 30) + '" y="' + snowfall_coords[i] + '" value="' + Math.round(snowfall_values[i] * 100) / 100.0 + '" />\n';

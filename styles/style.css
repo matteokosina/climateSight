@@ -248,7 +248,7 @@ img {
 @media print {
 
     /* Diese Elemente sollen beim drucken nicht mit angezeigt werden*/
-    button {
+    a {
         display: none;
     }
 
