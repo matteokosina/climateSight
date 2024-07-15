@@ -88,9 +88,9 @@ function jsonToXML(data) {
     let xml = '<historical>\n';
         for (let year in data) {
             xml += `  <year value="${year}">\n`;
-            xml += `    <average_precipitation_sum>${data[year].average_precipitation_sum}</average_precipitation_sum>\n`;
-            xml += `    <average_temperature_2m_max>${data[year].average_temperature_2m_max}</average_temperature_2m_max>\n`;
-            xml += `    <snowfall_sum>${data[year].snowfall_sum}</snowfall_sum>\n`;
+            xml += `    <average_precipitation_sum>${Math.round(data[year].average_precipitation_sum * 100) / 100 }</average_precipitation_sum>\n`;
+            xml += `    <average_temperature_2m_max>${Math.round(data[year].average_temperature_2m_max * 100) / 100}</average_temperature_2m_max>\n`;
+            xml += `    <snowfall_sum>${Math.round(data[year].snowfall_sum * 100) / 100}</snowfall_sum>\n`;
             xml += '  </year>\n';
         }
     xml += '</historical>';
