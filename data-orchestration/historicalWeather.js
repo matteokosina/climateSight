@@ -186,7 +186,7 @@ function scaleArray(data) {
         // Berechne den Skalierungsfaktor
         scaleFactor = 300 / maxValue;
     } else if (maxValue < 0) {
-        scaleFactor = 100 / -minValue;
+        scaleFactor = 50 / -minValue;
     } else {
         return data;
     }
