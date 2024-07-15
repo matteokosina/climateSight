@@ -67,7 +67,7 @@
 
             <!-- Draw axes with arrowheads -->
             <line x1="50" y1="400" x2="550" y2="400" stroke="black" marker-end="url(#arrowhead)" />
-            <line x1="50" y1="50" x2="50" y2="450" stroke="black" marker-end="url(#arrowhead)" />
+            <line x1="50" y1="450" x2="50" y2="50" stroke="black" marker-end="url(#arrowhead)" />
 
             <!-- X-axis label -->
             <text x="308" y="495" text-anchor="middle" font-size="15" fill="black"><xsl:value-of select="@xvalue" /></text>
