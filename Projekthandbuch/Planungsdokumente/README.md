@@ -159,16 +159,3 @@ Alternativ lässt sich auch jeder andere Webserver (z.B. Apache) nutzen, solange
 ## Browser Unterstützung
 
 Die Website wurde für gängige Webbrowser getestet (Chrome, Firefox und Safari) und war auf allen funktionsfähig. Lediglich bei Firefox wurden die SVG-Liniendiagramme eingeschränkt dargestellt, jedoch noch in einem Rahmen, der die Verständlichkeit der dargestellten Daten nicht drastisch beeinflusst.
-
-## Contributor
-
- <table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/F2011"><img src="https://avatars.githubusercontent.com/u/110890521?v=4" width="100px;" alt="Leon Fertig"/><br /><sub><b>Leon Fertig</b></sub></a><br /> </td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/matteokosina"><img src="https://avatars.githubusercontent.com/u/74454734?v=4" width="100px;" alt="Matteo Kosina"/><br /><sub><b>Matteo Kosina</b></sub></a><br /></td>
-   
-  </tbody>
-</table>
-
-

@@ -49,7 +49,6 @@ Die meisten Planungsdokumente wurden erstellt, \underline{nachdem} ein Projektmi
 \includegraphics[width=\textwidth, page=3]{Planungsdokumente/graphics/README.pdf}
 \includegraphics[width=\textwidth, page=4]{Planungsdokumente/graphics/README.pdf}
 \includegraphics[width=\textwidth, page=5]{Planungsdokumente/graphics/README.pdf}
-\includegraphics[width=\textwidth, page=6]{Planungsdokumente/graphics/README.pdf}
 
 \section{Protokolle}
 {\it Autor: Leon Fertig}
@@ -79,6 +78,7 @@ Der Projektauftrag geht aus den Anforderungen des Auftraggebers Herrn Röthig he
 	\end{itemize}
     \item Es wird eine Installationsanleitung erstellt, die es einem Administrator erlaubt, den Webserver bei sich zu betreiben. Eine Demo-Installation mit einem einfachen Python-Webserver wird Schritt für Schritt beschrieben. Für die produktive Nutzung werden jedoch einige Kenntnisse benötigt, die die Installationsanleitung nicht bereitstellt.
     \item Für die Datenspeicherung wird XML verwendet (API-Daten müssen gegebenenfalls von JSON in XML umgewandelt werden). Mithilfe von XSLT werden diese Daten in HTML oder SVG umgewandelt. Hierfür werden geeignete Datenformate definiert.
+    \item Die Webseite soll ein Impressum mit Kontaktdaten zu den Entwicklern und Cookie-Banner zum Akzeptieren beim erstmaligen Verwenden der Webseite enthalten. Hat ein User der Verwendung der Cookies zugestimmt, wird ihm dieses Banner nicht mehr angezeigt und er kann die Webseite ordnungsgemäß verwenden. Akzeptiert er nicht, kann er keine weiteren Seiten benutzen: Er wird immer wieder zur Landing-Page (mit Cookie-Banner) zurückgeleitet.
 \end{itemize}
 
 \subsection*{Soll-Kriterien}
@@ -86,6 +86,7 @@ Der Projektauftrag geht aus den Anforderungen des Auftraggebers Herrn Röthig he
     \item Die Sprache kann zwischen Deutsch und Englisch gewechselt werden.
     \item Auf der Analytics-Page werden lokale Nachrichten (mit Fokus auf Klima + Wetter) angezeigt.
     \item Auf der Discover-Page kann man mit einem Klimafilter (nach Temperatur und/oder Niederschlag) die Länder gruppieren, um eine bessere Übersichtlichkeit zu erreichen.
+    \item Eine Demo-Version der Webseite soll öffentlich (z. B. über GitHub-Pages) gehostet werden und so bis mindestens September 2025 öffentlich aufrufbar sein.
 \end{itemize}
 
 \subsection*{Kann-Kriterien}
@@ -95,9 +96,9 @@ Der Projektauftrag geht aus den Anforderungen des Auftraggebers Herrn Röthig he
 
 \subsection*{Abgrenzungskriterien}
 \begin{itemize}
-    \item kein Einsatz von KI
-    \item keine Routenführung
-    \item keine mobile Anwendung (nicht für Smartphone oder Tablets optimiert)
+    \item Es soll keine Künstliche Intelligenz eingesetzt werden.
+    \item Die Karte stellt keine Routenführung bereit.
+    \item Die Webseite ist nicht für Smartphones oder Tablets optimiert. Ein Smartphone-User kann also u. U. die Webseite nicht verwenden (z. B. weil er an einzelne Buttons nicht kommt).
 \end{itemize}
 
 \section{Phasen- und Meilensteinplan}
@@ -105,7 +106,8 @@ Der Projektauftrag geht aus den Anforderungen des Auftraggebers Herrn Röthig he
 \newline
 Der Phasen- und Meilensteinplan enthält {\bf nicht} die Arbeitspakete aus Projektstrukturplan, Gantt-Diagramm etc., da die Arbeitspakete - der geringen Größe des Projekts geschuldet - relativ viele kleineren Aufgaben enthalten und daher über relativ große Zeiträume reichen, sodass ein übersichtlicher Phasen- und Meilensteinplan nicht möglich wäre. Daher wurde der Phasen- und Meilensteinplan als grobe Übersicht erstellt und das Gantt-Diagramm wurde zur Überprüfung des Zeitplans eingesetzt.
 \newline
-\includegraphics[width=\textwidth]{Planungsdokumente/graphics/Meilensteinplan.pdf}
+\includegraphics[width=\textwidth, page=1]{Planungsdokumente/graphics/Meilensteinplan.pdf}
+\includegraphics[width=\textwidth, page=2]{Planungsdokumente/graphics/Meilensteinplan.pdf}
 
 \section{Projektorganigramm}
 {\it Autor: Matteo Kosina}
