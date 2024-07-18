@@ -23,7 +23,6 @@
 
 ## Generated if empty string is given at "Please type another file name for output:"
 # main.pdf
-# pflichtenheft.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
@@ -279,7 +278,7 @@ TSWLatexianTemp*
 # Apple file system helper
 .DS_Store
 
-# weird word helper files
+# weird MS Office helper files
 ~$*
 
 # VSCode stuff
