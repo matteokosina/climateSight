@@ -5,7 +5,7 @@ transformXML();
 
 // Ueberpruefung, ob Cookies bereits akzeptiert wurden, wenn nicht, wird man auf die Startseite zurueck gefuehrt
 if (!cookiesAccepted() && location.pathname != "/index.html") {
-    location.assign("http://" + location.host + "/climateSight/index.html");
+    location.assign("http://" + location.host + "/index.html");
 }
 
 // auslesen des localstorage
