@@ -5,7 +5,14 @@ transformXML();
 
 // Ueberpruefung, ob Cookies bereits akzeptiert wurden, wenn nicht, wird man auf die Startseite zurueck gefuehrt
 if (!cookiesAccepted() && location.pathname != "/index.html") {
-    location.assign("http://" + location.host + "/index.html");
+    console.log(location.host);
+    console.log(location.hostname);
+    console.log(location.href);
+    console.log(location.origin);
+    let pattern = /[^/]+\.html$/;
+    let newURL = location.href.replace(pattern, '../index.html');
+    console.log(newURL);
+    location.assign(newURL);
 }
 
 // auslesen des localstorage
